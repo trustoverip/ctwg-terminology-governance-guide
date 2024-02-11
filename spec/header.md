@@ -1,10 +1,7 @@
 ## Status of This Memo
 
-This document contains a template specification for `ToIP`!.
+The document structure is based on a template specification for `[ToIP](https://github.com/trustoverip/specification-template)`.
 
-Information about the current status of this document, any errata,
-and how to provide feedback on it, may be obtained at
-[https://github.com/trustoverip/specification-template](https://github.com/trustoverip/specification-template).
 
 ## Copyright Notice
 
@@ -17,7 +14,7 @@ Apache 2.0 license unless otherwise marked. In the case of any conflict or
 confusion within this specification between the OWF Contributor License 
 and the designated source code license, the terms of the OWF Contributor License shall apply.
 
-These terms are inherited from the Technical Stack Working Group at the Trust over IP Foundation. [Working Group Charter](https://trustoverip.org/wp-content/uploads/TSWG-2-Charter-Revision.pdf)
+These terms are inherited from the Concepts and Terminology Working Group at the Trust over IP Foundation. [Working Group Home](https://wiki.trustoverip.org/pages/viewpage.action?pageId=65700)
 
 
 ## Terms of Use
@@ -30,7 +27,7 @@ IN NO EVENT WILL ANY ToIP PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR
 ## RFC 2119
 The Internet Engineering Task Force (IETF) is a large open international community of network designers, operators, vendors, and researchers concerned with the evolution of the Internet architecture and to ensure maximal efficiency in operation. IETF has been operating since the advent of the Internet using a Request for Comments (RFC) to convey “current best practice” to those organizations seeking its guidance for conformance purposes.
 
-The IETF uses RFC 2119 to define keywords for use in RFC documents; these keywords are used to signify applicability requirements.  ToIP has adapted the IETF RFC 2119 for use in the <name of this document>, and therefore its applicable use in ToIP-compliant governance frameworks.
+The IETF uses RFC 2119 to define keywords for use in RFC documents; these keywords are used to signify applicability requirements.  ToIP has adapted the IETF RFC 2119 for use in the Terminology Specification Guide, and therefore its applicable use in ToIP-compliant governance frameworks.
 
 The RFC 2119 keyword definitions and interpretation have been adopted. Those users who follow these guidelines SHOULD incorporate the following phrase near the beginning of their document:
         The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
