@@ -24,10 +24,10 @@ Needless to say, this process is important for mutual understanding.
 > E.g. X.509 could be an abbreviation, and 'EU ID' is not an abbreviation
 
 ::: note Basic Note
-A lot of adding-criteria work needs to be done, before we discuss anything like reusing definitions in another mental model. It just makes no sense to refer / link to a non-deterministic definition of somebody else, for this introduces confusion per definition: we think we are talking about the same, but most probably we're not!
+A lot of adding-criteria work needs to be done, before we discuss anything like reusing definitions in another mental model. It just makes no sense to refer / link to a non-deterministic definition of somebody else, for this inherently introduces confusion: we think we are talking about the same thing, but most probably we're not!
 :::
 
-Some good news is that the enhancement in writing down concepts and terminology can be done in parallel with other things:
+Some good news is that enhancement in the written version of concepts and terminology can be achieved in parallel with other activities:
 - archiving old concept and glossaries
 - tool development
 - consensus building

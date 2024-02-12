@@ -8,6 +8,68 @@ This section might why we anticipate with this Governance Guide on future develo
 ### Concerns
 We share some concern raised over the first months in 2024.
 
+#### Spec-Up and Specification Template
+
+Current copy and paste strategy leading to merge horror "unrelated histories".
+
+```mermaid
+flowchart TD
+    DIF --> |SpecUp_Daniel_Buchner| SpecUp_60ae636
+    SpecUp_60ae636 --> |PR accepted| SpecUp_d392aa1
+    SpecUp_d392aa1 --> |commit| SpecUp_e63f252
+    SpecUp_e63f252 --> |commit| SpecUp_985a65b
+    SpecUp_60ae636 --> |copy Specification Template| ToIP_SpecUp_60ae636
+    ToIP_SpecUp_60ae636 --> |PR accepted| SpecUp_445a7db
+    SpecUp_445a7db --> |PR accepted| SpecUp_7667ec3
+    SpecUp_7667ec3 -->  |copy | Spec_kerific
+    SpecUp_7667ec3 --> |copy |keri-spec
+    SpecUp_7667ec3 --> |copy | acdc-spec
+    SpecUp_445a7db --> |copy | cesr-spec
+    ToIP_SpecUp_60ae636 --> |copy| trp-spec
+    ToIP_SpecUp_60ae636 --> |copy| tas-spec
+
+    style DIF fill:#ffc;
+    style SpecUp_60ae636 fill:#ffc;
+    style SpecUp_d392aa1 fill:#ffc;
+    style SpecUp_e63f252 fill:#ffc;
+    style SpecUp_985a65b fill:#ffc;
+```
+
+How we should fork to stay in tune with each-other and easily accept improvements?
+
+```mermaid
+flowchart TD
+    DIF --> |SpecUp_Daniel_Buchner| SpecUp_60ae636
+    SpecUp_60ae636 --> |PR accepted| SpecUp_d392aa1
+    SpecUp_d392aa1 --> |commit| SpecUp_e63f252
+    SpecUp_d392aa1 --> |pull| ToIP_SpecUp_60ae636
+    SpecUp_e63f252 --> |commit| SpecUp_985a65b
+    SpecUp_60ae636 --> |Fork Specification Template| ToIP_SpecUp_60ae636
+    ToIP_SpecUp_60ae636 --> |PR accepted| SpecUp_445a7db
+    SpecUp_445a7db --> |fetch+merge| SpecUp_d392aa1
+    SpecUp_445a7db --> |PR accepted| SpecUp_7667ec3
+    SpecUp_7667ec3 -->  |Fork | Spec_kerific
+    SpecUp_7667ec3 --> |Fork |keri-spec
+    SpecUp_7667ec3 --> |Fork | acdc-spec
+    SpecUp_445a7db --> |Fork | cesr-spec
+    ToIP_SpecUp_60ae636 --> |Fork| trp-spec
+    ToIP_SpecUp_60ae636 --> |Fork| tas-spec
+    SpecUp_985a65b --> |fetch+merge| SpecUp_7667ec3
+    SpecUp_7667ec3 --> |pull| SpecUp_985a65b
+
+    style DIF fill:#ffc;
+    style SpecUp_60ae636 fill:#ffc;
+    style SpecUp_d392aa1 fill:#ffc;
+    style SpecUp_e63f252 fill:#ffc;
+    style SpecUp_985a65b fill:#ffc;
+```
+**Noticed the differences?**
+1. Through *forking* instead of *copying* we keep git histories compatible
+2. Through `fetch+merge` (or `pull` when no conflicts expected) we not only keep DIF and ToIP synced, but also it is very straightforward to update all the gh-pages-based specification websites that *use* the Specification Template to:
+   - sync functionality and data
+   - offer PRs from any of those installs
+
+
 #### Roadmap to TEv2
 As a TEv2 creator and frontman we share Rieks Joosten's viewpoint on this proposal for using Spec-Up refs and defs. 
 
