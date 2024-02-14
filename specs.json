@@ -10,6 +10,7 @@
         "header.md",
         "toc.md",
         "foreword.md",
+        "clauses.md",
         "introduction.md",
         "scope.md",
         "howto_define.md",
@@ -19,7 +20,6 @@
         "normative_references.md",
         "integration.md",
         "terms_and_definitions.md",
-        "clauses.md",
         "annex.md",
         "biblio.md"
       ],

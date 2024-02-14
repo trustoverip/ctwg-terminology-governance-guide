@@ -43,3 +43,11 @@ What are the supported source document types for:
 3. Term/Concept metadata (gdocs? JSON?)
 
 | TBW |
+
+Guidance on diagrams (and managing their source) would be helpful. 
+
+For example, should diagrams always be rendered and controlled as png and preferably svg, too (for presentations, etc)?
+
+Is it feasible to offer links in diagrams and if so, can we check and repair broken links easily?
+
+| TBW |

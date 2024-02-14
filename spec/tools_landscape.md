@@ -22,14 +22,14 @@ Every group within ToIP that uses Spec-Up has a setup more or less like the foll
 
 Platform| Git branch | Software
 ----: | --------------: | ---------:
-github.com repo| main or 'own choice' |Spec-Up|
-^^  || VsCode |
-^^ || Node.js / NPM |
-github.io pages |gh-pages| `user.github.io/repo` |
+github.com repo| main or 'own choice' |Spec-Up
+^^  | | VsCode |
+^^ | | Node.js / NPM |
+github.io pages |gh-pages| `user.github.io/repo` 
 ^^ |  | github actions |
 ^^ |  | kerific |
-github.com wiki| master |`github.com/user/repo/wiki`|
-^^ || github actions |
+github.com wiki| master |`github.com/user/repo/wiki`
+^^ | | github actions |
 [Infrastructure Terminology Engine ToIP]
 
 ### Flow of Writing a Specification in Spec-Up

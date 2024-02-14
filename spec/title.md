@@ -1,7 +1,7 @@
 Terminology Governance Guide
 ==================
 
-**Specification Status**: v0.5 Draft
+**Specification Status**: v0.6 Draft
 
 **Latest Draft:**
 
@@ -16,9 +16,11 @@ Terminology Governance Guide
 - [Darrell O'Donnell](https://github.com/darrellodonnell), [Continuum Loop Inc.](https://www.continuumloop.com)
 - Rieks Joosten
 - Drummond Reed
+- [Ed Eykholt](https://github.com/edeykholt)
 - [Kor Dwarshuis](https://github.com/kordwarshuis)
 - [Kevin Griffin](https://github.com/m00sey), [GLEIF](https://gleif.org)
 - [Daniel Hardman](https://www.linkedin.com/in/danielhardman/), [Provenant, Inc](https://provenant.net)
+  
 
 **Participate:**
 
