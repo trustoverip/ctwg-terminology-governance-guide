@@ -22,6 +22,13 @@ Let's clear up the issues around TEv2 versus Spec-Up and KERISSE tooling. The go
 
 The issue of unification is open, and it might be solved. By whom is not yet clear. A sequence numbered roadmap to unification (presumming that that's the goal) can be found below.
 
+
+##### Temporary solution: pictures
+
+![past](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20past.png)
+
+![future](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20future.png)
+
 ```mermaid
 gantt
     title Roadmap to Unification of Specification and Terminology
