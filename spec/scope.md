@@ -25,9 +25,9 @@ The issue of unification is open, and it might be solved. By whom is not yet cle
 
 ##### Temporary solution: pictures
 
-![past](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20past.png)
+![past](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20past.png?raw=true)
 
-![future](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20future.png)
+![future](https://github.com/henkvancann/terminology-governance-guide/blob/fab622598a0bc03d0fedb62ea989572e082ae6bb/images/Gantt%20Diagram%20temporary%20future.png?raw=true)
 
 ```mermaid
 gantt
