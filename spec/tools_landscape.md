@@ -52,6 +52,11 @@ flowchart TD
   I --> |Internal ref|J[Reference]
   J --> A
 ```
+### Glossary Flow: Ingest - Curation - Output
+
+![Glossary Flow: Ingest - Curation - Output](https://github.com/henkvancann/terminology-governance-guide/blob/5ecd9e92d75edb3c0844a266537d2d3bbd68676b/images/Darrell-Glossary-Workflow.jpeg?raw=true)
+
+By: Darrell O'Donnell, Jan 2024
 
 ### Combining central, external and internal references to definitions
 
