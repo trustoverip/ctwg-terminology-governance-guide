@@ -40,3 +40,8 @@ This specification intends to offer a *[[ref: Guide]]*. A Guide has little or no
 - be able to generate your documents in a few leading **style-guides** like ToIP, ISO, etc.
 - Last but not least: any group with a certain scope will need to **source manage their own definitions** or views on definition, which means that we need to ear mark creation and updates with time & author.
 
+![Past Practise Terminology Governance](https://github.com/henkvancann/terminology-governance-guide/blob/be980e063e99f97cbb14093735ed42d9e8d617e2/images/past-practice-terminology-gov.png?raw=true)
+
+![Current Practise Terminology Governance](https://github.com/henkvancann/terminology-governance-guide/blob/be980e063e99f97cbb14093735ed42d9e8d617e2/images/current-practice-terminology-gov.png?raw=true)
+
+![Future Practise Terminology Governance?](https://github.com/henkvancann/terminology-governance-guide/blob/be980e063e99f97cbb14093735ed42d9e8d617e2/images/past-practice-terminology-gov.png?raw=true)
