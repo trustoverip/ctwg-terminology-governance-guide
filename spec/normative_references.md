@@ -131,30 +131,6 @@ The latter allow the author to reference a def in a different Spec-Up document. 
 | TBW where is the registry to ensure uniqueness of doctags and prevention of duplicious doctags? |
 
 
-Judith Fleenor asked for Rieks Joosten viewpoint on this proposal for using Spec-Up refs and defs. He explained that the same features being discussed here were also added to TEv2. There is always tension between adding a lot of features and taking a long time, or keeping things very minimal. He pointed out that creating glossaries based on cherry-picking glossary entries based on personal preferences can be problematic because it doesn't actually establish shared understanding and criteria for defining terms. The larger the group involved, and the more varied their cultural backgrounds, the more problematic that can become. However, that doesn't mean we shouldn't start with tools that are actually working right now. Riek's personal preference is to use terminology that expresses the author's intentions clearly. For example, in reading the Spec-Up documentation, it was challenging for Rieks to understand it without more context.
-
-Rieks Joosten would like to have several more sessions on TEv2 so we can still look at how we can use it for our terminology.
-
-Judith Fleenor summarized Riek's feedback as saying that he's not opposed to enhancing Spec-Up for these features, but at the same time keeping TEv2 tooling in progress. 
-
-Darrell O'Donnell clarified that he and Kevin will not delete any ToIP repos, but will only archive them.
-
-Rieks Joosten concluded that we need to see what tools are actually needed by both authors and readers to help them comprehend the terms they use. He can also explore how TEv2 tooling can be used to produce Spec-Up definitions.
-
-Judith Fleenor asked if we had a clear decision about Brian Richter to make the proposed changes to Spec-Up.
-
-Drummond Reed asked if there were any objections.
-
-Kevin Griffin was in favor of moving forward at the use of both types of tools (Spec-Up and TEv2) and will provide his input per his action item above.
-
-Rieks Joosten was in favor of proceeding with these changes to Spec-Up, but also to continue the work on TEv2 to tackle larger issues of terminology management. He also pointed out this Confluence tool: https://marketplace.atlassian.com/apps/1219677/smart-terms-for-confluence-glossary?tab=overview&hosting=cloud 
-
-DECISION: We will proceed to ask Brian Richter to make the proposed code contributions to Spec-Up to add the dangling ref/def and remote ref features as described in the 2024-01-29 CTWG meeting notes.
-
-
-
-
-
 ## System feature Consistency
 
 Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with all kinds of working internal and external links and clear rules for writers.
@@ -162,6 +138,7 @@ Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with a
 ### Basic domain checks
 1. characterset
 2. spaces
+   [[def:<term>]] and [[def: <term>]]
    | TBW |
    
 ### Domain checks Spe-Up or github actions
@@ -172,7 +149,6 @@ Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with a
 5. If term and abbrev are the same, discard abbrev
 6. If alias and term are the same, discard alias
 7. If abbrev and alias are the same, discard alias
-
 
 | TBW What is 'the same' ? |
 
