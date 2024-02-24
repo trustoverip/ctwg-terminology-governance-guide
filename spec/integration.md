@@ -82,7 +82,220 @@ Rieks would like to have several more sessions on TEv2 so we can still look at h
 
 Rieks Joosten concluded that we need to see what tools are actually needed by both authors and readers to help them comprehend the terms they use. He can also explore how TEv2 tooling can be used to produce Spec-Up definitions.
 
-Rieks Joosten was in favor of proceeding with changes to Spec-Up, but also to continue the work on TEv2 to tackle larger issues of terminology management. 
+Rieks Joosten was in favor of proceeding with changes to Spec-Up, but also to continue the work on TEv2 to tackle larger issues of terminology management.
+
+#### TEv2 Explanation
+
+##### Current structure
+```mermaid
+flowchart LR
+A[A:Root];B[B:ScopeDir];C[/C:SAF/]; D[D:GlossaryDir]; E[E:CurTextDir]
+    A -->|install| B
+    B -->|config| C
+    B -->|populate| D
+    B -->|populate| E 
+```
+
+#### Docusaurus example CURRENT
+```mermaid
+flowchart LR
+A[A:Root];B[B:/docs];C[/C:saf.yaml/]; D[D:glossaries]; E[E:terms]
+    A -->|install| B
+    B -->|create| C
+    B -->|populate| D
+    B -->|populate| E 
+```
+#### SpecUp example CURRENT
+```mermaid
+flowchart LR
+A[A:Root];B[B:/spec];C[/C:saf.yaml/]; D[D:glossaries]; E[E:terms]
+    A -->|install| B
+    B -->|create| C
+    B -->|populate| D
+    B -->|populate| E 
+```
+
+
+##### Internal Scope Terminology
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)):::armyGreenFill--> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]:::lightYellowFill
+    I -.-> two
+    subgraph two[📂 glossaries]
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]:::medGreenFill
+    end
+    two --> E
+    D --> E[E:mrgt]:::medGreenFill
+    I -.-> E
+    P[P:hrgt]:::medGreenFill
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]:::lightYellowFill
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
+    B --> C((C:Scope ingress process)):::armyGreenFill
+classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
+classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
+classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+click J href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrg-import" "Open this in a new tab" _blank
+click E href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrgt" "Open this in a new tab" _blank
+click P href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/hrgt" "Open this in a new tab" _blank
+click N href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/trrt" "Open this in a new tab" _blank
+```
+
+##### External glossary import
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)):::armyGreenFill--> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]:::lightYellowFill
+    I -.-> two
+    I -.-> J[J:MRG Importer]:::medGreenFill
+    subgraph two[📂 glossaries]
+        K>MRG]:::lightBlueFill; L>MRG]:::violetFill
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]:::medGreenFill
+    end
+    J --> two
+    two --> E
+    D --> E[E:mrgt]:::medGreenFill
+    I -.-> E
+    P[P:hrgt]:::medGreenFill
+    E --> two
+    two --> P
+    two --> N
+    two --> Q
+ end
+    I -.-> three
+    I -.-> four
+    W --> J
+    WW --> J
+    WWW ~~~ J
+    two -.-> |has a| R[\R:Formatted text\]:::lightYellowFill
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
+    B --> C((C:Scope ingress process)):::armyGreenFill
+%% subgraph six[External glossaries]    
+   subgraph three[Scope Dir]
+   V[/SAF/] ~~~ W[MRG]:::lightBlueFill
+   end
+   subgraph four[Scope Dir]
+   VV[/SAF/] ~~~ WW[MRG]:::violetFill
+   end
+    subgraph five[Scope Dir]
+   VVV[/SAF/] ~~~ WWW[MRG]:::lightRedFill
+   end
+%% end
+classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
+classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
+classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px
+classDef lightBlueFill fill:#9cf,stroke:#333,stroke-width:3px
+classDef violetFill fill:#99f,stroke:#333,stroke-width:3px
+classDef lightRedFill fill:#c00,stroke:#333,stroke-width:3px
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style three fill:#69f,stroke:#333,stroke-width:1px
+style four fill:#60c,stroke:#333,stroke-width:1px
+style five fill:#c30,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+click J href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrg-import" "Open this in a new tab" _blank
+click E href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrgt" "Open this in a new tab" _blank
+click P href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/hrgt" "Open this in a new tab" _blank
+click N href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/trrt" "Open this in a new tab" _blank
+```
+
+##### Full architecture
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)):::armyGreenFill--> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]:::lightYellowFill
+    I -.-> two
+    I -.-> J[J:MRG Importer]:::medGreenFill
+    subgraph two[📂 glossaries]
+        K>MRG]:::lightBlueFill; L>MRG]:::violetFill
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]:::medGreenFill
+    end
+    S[S:Integrity Checker Tool]:::medGreenFill
+    J --> K
+    J --> L
+    K --> E
+    L --> E
+    D --> E[E:mrgt]:::medGreenFill
+    I -.-> E
+    P[P:hrgt]:::medGreenFill
+    E --> M
+    M --> P
+    M --> N
+    P --> Q
+ end
+    I -.-> three
+    I -.-> four
+    W --> J
+    WW --> J
+    WWW ~~~ J
+    Q -.-> |is a| R[\R:Formatted text\]:::lightYellowFill
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
+    B --> C((C:Scope ingress process)):::armyGreenFill
+%% subgraph six[External glossaries]    
+   subgraph three[Scope Dir]
+   V[/SAF/] ~~~ W[MRG]:::lightBlueFill
+   end
+   subgraph four[Scope Dir]
+   VV[/SAF/] ~~~ WW[MRG]:::violetFill
+   end
+    subgraph five[Scope Dir]
+   VVV[/SAF/] ~~~ WWW[MRG]:::lightRedFill
+   end
+%% end
+classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
+classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
+classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px
+classDef lightBlueFill fill:#9cf,stroke:#333,stroke-width:3px
+classDef violetFill fill:#99f,stroke:#333,stroke-width:3px
+classDef lightRedFill fill:#c00,stroke:#333,stroke-width:3px
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style three fill:#69f,stroke:#333,stroke-width:1px
+style four fill:#60c,stroke:#333,stroke-width:1px
+style five fill:#c30,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+click J href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrg-import" "Open this in a new tab" _blank
+click E href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrgt" "Open this in a new tab" _blank
+click P href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/hrgt" "Open this in a new tab" _blank
+click S href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools-envisaged/ict" "Open this in a new tab" _blank
+click N href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/trrt" "Open this in a new tab" _blank
+```
 
 #### Always archive never delete
 
