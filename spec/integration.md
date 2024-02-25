@@ -115,16 +115,276 @@ A[A:Root];B[B:/spec];C[/C:saf.yaml/]; D[D:glossaries]; E[E:terms]
     B -->|populate| E 
 ```
 
-
-##### Internal Scope Terminology
+##### Internal Scope Terminology - 0.1: no links & no classDef & no new forms
 ```mermaid
 flowchart LR
     subgraph one [SCOPE DIRECTORY]
-    H((H:Scope Admin process)):::armyGreenFill--> I[/I:SAF/]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    C --> D[/D:Curated text/]
+    I -.-> two
+    subgraph two[glossaries]
+        M("`**MRG**`")
+        Q(Q:HRG)
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]
+    end
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+```
+
+##### Internal Scope Terminology - 0.2: no links & no classDef & no styles
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    C --> D[/D:Curated text/]
+    I -.-> two
+    subgraph two[glossaries]
+        M("`**MRG**`")
+        Q(Q:HRG)
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]
+    end
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+```
+
+##### Internal Scope Terminology - 0.3: isolate - no subgraphs
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    C --> D[/D:Curated text/]
+    I -.-> two
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+    end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+```
+
+##### Internal Scope Terminology - 0.3.1: isolate - no comment
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    C --> D[/D:Curated text/]
+    I -.-> two
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+```
+
+##### Internal Scope Terminology - 0.3.2: isolate - no strange symbol
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]
+    I -.-> two
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    B --> C((C:Scope ingress process))
+```
+
+##### Internal Scope Terminology - 0.3.3: isolate - no subgraphs!
+```mermaid
+flowchart LR
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]
+    I -.-> two
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+```
+
+
+##### Internal Scope Terminology - 0.4: isolate - all other strange stuff gone
+```mermaid
+flowchart LR
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    C --> D[/D:Curated text/]
+    I -.-> two
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    B --> C((C:Scope ingress process))
+```
+
+
+
+##### Internal Scope Terminology - 1: no links & no classDef
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]
+    I -.-> two
+    subgraph two[glossaries]
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]
+    end
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+```
+
+##### Internal Scope Terminology - 2: no classDef
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)) --> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]
+    I -.-> two
+    subgraph two[glossaries]
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]
+    end
+    two --> E
+    D --> E[E:mrgt]
+    I -.-> E
+    P[P:hrgt]
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+ end
+    two -.-> |has a| R[\R:Formatted text\]
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\] --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process))
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+click J href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrg-import" "Open this in a new tab" _blank
+click E href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/mrgt" "Open this in a new tab" _blank
+click P href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/hrgt" "Open this in a new tab" _blank
+click N href "https://tno-terminology-design.github.io/tev2-specifications/docs/specs/tools/trrt" "Open this in a new tab" _blank
+```
+
+##### Internal Scope Terminology - 3 : no links
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)):::armyGreenFill --> I[/I:SAF/]
     %% X ~~~~ H
     C --> D[/D:Curated text/]:::lightYellowFill
     I -.-> two
-    subgraph two[📂 glossaries]
+    subgraph two[glossaries]
         M("`**MRG**`")
         Q>Q:HRG]
     end
@@ -144,7 +404,46 @@ flowchart LR
     two -.-> |has a| R[\R:Formatted text\]:::lightYellowFill
     R -.-> N
     N -.-> R
-    A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
+    A[\A:Raw text\]:::lightYellowFill --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process)):::armyGreenFill
+classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
+classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
+classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px
+style B fill:#336,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+style one fill:#ff3,stroke:#333,stroke-width:1px
+style two fill:#fc6,stroke:#333,stroke-width:1px
+style seven fill:#ff9,stroke:#333,stroke-width:1px
+```
+
+##### Internal Scope Terminology
+```mermaid
+flowchart LR
+    subgraph one [SCOPE DIRECTORY]
+    H((H:Scope Admin process)):::armyGreenFill --> I[/I:SAF/]
+    %% X ~~~~ H
+    C --> D[/D:Curated text/]:::lightYellowFill
+    I -.-> two
+    subgraph two[glossaries]
+        M("`**MRG**`")
+        Q>Q:HRG]
+    end
+    subgraph seven[3rd party rendering tools]
+        N[N:trrt]:::medGreenFill
+    end
+    two --> E
+    D --> E[E:mrgt]:::medGreenFill
+    I -.-> E
+    P[P:hrgt]:::medGreenFill
+    E --> two
+    two --> P
+    P --> two
+    two --> N
+    two --> Q
+    end
+    two -.-> |has a| R[\R:Formatted text\]:::lightYellowFill
+    R -.-> N
+    N -.-> R
+    A[\A:Raw text\]:::lightYellowFill --> B[B: Ingress toolbox]
     B --> C((C:Scope ingress process)):::armyGreenFill
 classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
 classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
@@ -168,7 +467,7 @@ flowchart LR
     C --> D[/D:Curated text/]:::lightYellowFill
     I -.-> two
     I -.-> J[J:MRG Importer]:::medGreenFill
-    subgraph two[📂 glossaries]
+    subgraph two[glossaries]
         K>MRG]:::lightBlueFill; L>MRG]:::violetFill
         M("`**MRG**`")
         Q>Q:HRG]
@@ -194,9 +493,8 @@ flowchart LR
     two -.-> |has a| R[\R:Formatted text\]:::lightYellowFill
     R -.-> N
     N -.-> R
-    A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
-    B --> C((C:Scope ingress process)):::armyGreenFill
-%% subgraph six[External glossaries]    
+    A[\A:Raw text\]:::lightYellowFill --> B[B:Ingress toolbox]
+    B --> C((C:Scope ingress process)):::armyGreenFill   
    subgraph three[Scope Dir]
    V[/SAF/] ~~~ W[MRG]:::lightBlueFill
    end
@@ -206,7 +504,6 @@ flowchart LR
     subgraph five[Scope Dir]
    VVV[/SAF/] ~~~ WWW[MRG]:::lightRedFill
    end
-%% end
 classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
 classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
 classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px
@@ -231,7 +528,6 @@ click N href "https://tno-terminology-design.github.io/tev2-specifications/docs/
 flowchart LR
     subgraph one [SCOPE DIRECTORY]
     H((H:Scope Admin process)):::armyGreenFill--> I[/I:SAF/]
-    %% X ~~~~ H
     C --> D[/D:Curated text/]:::lightYellowFill
     I -.-> two
     I -.-> J[J:MRG Importer]:::medGreenFill
@@ -265,8 +561,7 @@ flowchart LR
     R -.-> N
     N -.-> R
     A[\A:Raw text\]:::lightYellowFill --> B[B: 🧰 Ingress toolbox]
-    B --> C((C:Scope ingress process)):::armyGreenFill
-%% subgraph six[External glossaries]    
+    B --> C((C:Scope ingress process)):::armyGreenFill  
    subgraph three[Scope Dir]
    V[/SAF/] ~~~ W[MRG]:::lightBlueFill
    end
@@ -276,7 +571,7 @@ flowchart LR
     subgraph five[Scope Dir]
    VVV[/SAF/] ~~~ WWW[MRG]:::lightRedFill
    end
-%% end
+
 classDef lightYellowFill fill:#ff9,stroke:#333,stroke-width:3px
 classDef medGreenFill fill:#0c3,stroke:#333,stroke-width:3px
 classDef armyGreenFill fill:#9c6,stroke:#333,stroke-width:3px

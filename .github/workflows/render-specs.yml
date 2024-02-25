@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write
     steps:
+
       - name: Checkout 🛎️
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
@@ -31,10 +32,7 @@ jobs:
           publish_dir: ./docs/
           allow_empty_commit: true
           force_orphan: true
-          
+
       - name: Local Deployment Placeholder
         if: env.LOCAL_EXECUTION == 'true'
         run: echo "Skipping deployment for local execution."
-
-
-          
