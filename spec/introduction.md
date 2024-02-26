@@ -9,7 +9,11 @@
 
 ## Introduction
 
-In 2021 TrustoverIP published the [Specification for Creating and Using Terms](https://wiki.trustoverip.org/display/HOME/Specification+for+Creating+and+Using+Terms)
+The Terminology Governance Guide is up-to-date guide of collected and assimilated expertise within Trust-over-IP with regard to Concepts and Terminology. It's objective is to offer a comprehesive description of various data stores, tools and processes to manage terminology in a consistent and reproducable manner. The process intents to keep track of who did what in which role.
+Authors of concepts & terminology use the Guide to produce internally and externally consistent specifications, they could look up how to reference term internally (refer to definitions within the own scope) and externally: refer to definitions externally, either within the own umbrella organisation (ToIP) other totally external (e.g. IETF).
+Curators of concepts & terminology have an insight were in the process consistency of terminology is validated by hand or by tools that verify the structure, defs, refs, abbreviation and aliasses that authors might use.
+
+There is a brief history to the Guide. In 2021 TrustoverIP published the [Specification for Creating and Using Terms](https://wiki.trustoverip.org/display/HOME/Specification+for+Creating+and+Using+Terms)
 
 In the years to follow the guide to create [Term wikis](https://wiki.trustoverip.org/display/HOME/Terms+Wikis) has been established. It gives extensive instructions on how to create wikis, use markdown and hyperlinks, etc.
 

@@ -2,6 +2,8 @@
 
 The document structure is based on a template specification for [ToIP](https://github.com/trustoverip/specification-template).
 
+The home Github repository from which this Guide is currently generated is https://github.com/trustoverip/terminology-governance-guide.
+
 This document is a guide for spec authors and a discription of how the tooling works. The [normative section](./normative_references.md) is aimed at developers of the specification template mentioned above.
 
 ## Copyright Notice
