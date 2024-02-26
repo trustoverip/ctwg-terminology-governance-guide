@@ -42,6 +42,17 @@ What are the supported source document types for:
 2. Authoring terms and related extended definitions, examples, and illustrations (in-depth explanations?)
 3. Term/Concept metadata (gdocs? JSON?)
 
+## Curation of Concepts vs. Terminology
+
+Why do github action of a scope go off on 'push' and 'by hand' (and not on 'gollum'; the latter is the wiki server)?
+
+Because 
+
+An author
+why will a changed Source of the Terminology not automatically (via github actions scripts) be promulgated to the production environment of the Scope and elsewhere if other Scopes use the MRG at hand?:
+
+because a curator has to check the content and invoke the github action script by hand. 
+
 | TBW |
 
 Guidance on diagrams (and managing their source) would be helpful. 
