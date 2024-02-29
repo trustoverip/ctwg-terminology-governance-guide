@@ -9,10 +9,16 @@ To simplify the job of tech spec construction and editing, the Technology Stack 
 #### Objective (informative)
 Terminology has a life cycle. Some concepts and its specific terminology are long lived. They reside in their field related to other concepts. Other terminologies are new, hip and temporary. Terminology can have broad application or conversely have a very specific small niche. They all share these characteristics:
 1. The sources need to be managed because its content is burdened with reputation
-2. References need to be managed in the digital worlds where creating copies is easy
-3. Different roles and responsibilities work on a terminology 
+2. References need to be managed in the digital world where creating copies is easy
+3. Different roles and responsibilities work on a terminology. We got to keep track who did what in which role. 
  
  In the ToIP Technology Architecture Specification it's a long-desired feature to add an integrated glossary. Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) should begin publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
+
+Process check:
+
+You should visually check each `def` created in a local Spec-Up document against *any `def`* that exists in any of the remotely referenced document URLs listed in the local document (see the “doctag” list description).
+
+**Decide whether you'd like to adopt as is, adopt with comment or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
 
 #### Objective (normative)
 For an author there are mainly three relevant functionalities.
@@ -22,10 +28,19 @@ For an author there are mainly three relevant functionalities.
    a. any ref tag defined in the spec has a corresponding def tag for the glossary entry, and  
    b. every def tag defining a glossary entry has at least one ref tag pointing to it.
 
-It should check each `def` created in a local Spec-Up document against *any `def`* that exists in any of the remote `ref` document URLs listed in the local document (see the “doctag” list description).
+Consistency pre-caution:
 
-When a certain Spec-Up document includes a certain glossary from another Spec-Up document, this is a statement: "we think we might be on the same page as the people that maintain this glossary".
-It's important to realize why somebody in which [role](./role.md#user-reader)
+Each `ref` has an existing `def`. Each `xref` has an existing `def` in the `doctag` glossary.
+
+It should **check** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **remove** from a local file. 
+
+It should **signal** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **change** in a local file.  
+
+| TBW | 
+
+When a local Spec-Up document includes a certain glossary from another remote Spec-Up document, this can be considered as a statement: "we think we might be on the same page as the people that maintain this glossary".
+
+It's important to make explicit that somebody in a certain [role](./role.md#user-reader) added context to a remotely referenced term definition. Or he/she has chosen to refrain from that.
 
 #### Doctag (informative)
 
@@ -46,18 +61,22 @@ Mind you, this process touches group dynamics, consensus building and communicat
 
 ##### Dangers of bluntly referencing and copying
 
-It's important to note that team members in various [roles](#Roles) should feel free to define a term as they wish, **after studying what's already there**.
+It's important to note that team members in various [roles](#Roles) should feel free to define a term as they wish, **after studying what's available**.
 
 #### Add context and metadata
 Adopting a term from a related scope (under the ToIP umbrella) or external SHOULD always be accompagnied with a possibility for the author, curator and maybe even other team members to add context to the definition adopted. The following metadata MUST be registered:
+
 - `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
 - `url` of the spec in which the term definition list is present and the name of the header
 - `commit hash` of the term definition plus specification adopted
 - `authenticated github user` that adopts the term (create), changes it's context (update) or deletes the context.
+
 This metadata SHOULD be added:
+
 - `group name` from which the term will be adopted
 - `role` of the `authenticated github user` in the current scope
-  You COULD add or remove:
+
+You COULD add or remove:
 - `context` which is a block of free text.
 
 The **order in which these changes take place** to a terminology definition, referencing and/or commenting SHOULD be registered.
@@ -113,9 +132,13 @@ Reference:
 Where `KE` is the doctag of KERI spec in spec-up format and `TP` the doctag of the ToIP overall glossary in spec-up.
 
 ```
+
 [[def: verification]]
 
-~ Verification in Healthcare is in between the strict [[xref: KE, verification]] and [[xref: TP, verification]]. However we have the same criteria as KERI because our system will be KERI-based.
+~ Verification in Healthcare is in between the strict [[xref: KE, verification]]
+ and the more loose ToIP definition [[xref: TP, verification]]. However we have the same criteria as KERI
+  because our system will be KERI-based.
+
 ```
 
 ##### How to stop adding context to an adopted term?
