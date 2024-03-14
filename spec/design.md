@@ -110,10 +110,12 @@ Everyone understands the criteria and the term covering the concept behind it. Y
 
 The term definition looks like this:
 
+```
 [[def: verification]]
  ~ 
  a data item or statement may be cryptographically securely attributable to its source (party at the source end) by any recipient verifier (party at the destination end) The process must be an automatic computerized process.
- 
+ ```
+
 **End of example.**
 
 
@@ -235,13 +237,13 @@ Once you've succesfully identified a concept for all stakeholders, it makes no s
 Be sure to create a Terminology definition with the criteria and identify this concept with the term intended.
 
 For example:
-
+```
 [[def: stool, stools]]
  ~ furniture to comfortably sit on with exactly 3 legs from seat to each non-fixed contact point of the leg on the floor
-
+```
 AND then change the concept criteria in the text with the concept term:
 
-move the [[ref: stools]] into the van.
+move the ```[[ref: stools]]``` into the van.
 
 #### Next time 
 You might come across a concept that has already been identified and defined with a term + criteria:
