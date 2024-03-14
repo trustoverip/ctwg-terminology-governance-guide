@@ -39,7 +39,7 @@ But unfortunately **not together with referencing existing poorly-formulated def
 Currently github wikis serve as the source management tool of the glossary terms in ToIP context. There are temporary exceptions.
 
 Here are a few [practical rules](https://wiki.trustoverip.org/display/HOME/Terms+Wikis) from the originator ToIP to get these wiki terms through their equivalent [github actions script](https://github.com/WebOfTrust/WOT-terms/actions/workflows/content-fetch-and-deploy-update-glossary.yml), please:
-1. beware all new wiki items you **create**, lead to new .md files. We'd like to know
+1. beware all new wiki items you **create**, lead to new .md files. Because we'd like to know about new definitions, flant them in discussions or social media: throw links!
 2. introduce lowercase names with spaces (they will convert into lower case names with dashes between the words)
 3. start with **## Definition** header; [example](https://github.com/WebOfTrust/WOT-terms/wiki/composable-event-streaming-representation)
 4. start with uppercase abbreviations with only the "**## See**" header; [example](https://github.com/WebOfTrust/WOT-terms/wiki/CESR)

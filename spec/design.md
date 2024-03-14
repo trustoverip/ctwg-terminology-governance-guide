@@ -6,9 +6,19 @@
 
  "Please let me just write my document and add some glossary items and we’re done. We skip all the academic hassle about *meaning, concepts, artefacts* and what have we. Let’s get work done!”
 
-### Do not proceed if
+### Do not proceed if...
 
-You recognize a few of those remarks above? If communication and understanding each other were just that easy, we could leave the hard part out. But **we can't skip the design of terminology** if we want to convey a (new) concept.
+Cliff hanger! First, do you recognize a few of the emotional remarks above (under "Terminology design aids")? 
+
+Why can't we give in? Simply skip the nerdy stuff? The reason is devastatingly basic: 
+
+ If communication and understanding each other were just that easy, we could leave the hard part out. 
+
+But **we can't skip the design of terminology** if we want to convey a (new) concept and make sense for other people.
+
+::: warning Alert
+Since we've just told you, you can only *knowingly* neglect the duty of designing proper terminology.
+:::
 
 **Do not proceed with this chapter if you're a sender, only sending or broadcasting.**
 
@@ -257,7 +267,7 @@ A[A:I am writing, but I need to explain something! Help!];B{B:Terms understood?}
 
 ### Wrap up
 
-Isn’t the magic word "Criteria" a bit cruel? It might snatch average human beings in the heart of their weakness: understanding others. Yet "mutual understanding" is needed to be able to formulate criteria.
+Isn’t the magic word "Criteria" a bit cruel? It might snatch average human beings in the heart of their weakness: understanding others. Yet "mutual understanding" is needed to be able to formulate suitable criteria.
 
 ### Move forward
 
