@@ -70,7 +70,7 @@ Tada! Our matching guidelines are:
 1. Start writing your objectives and ideas, and identify the concepts behind the terms you use ([why](#why-objectives)-[what is it](#what-identifying)?) 
 2. Write the concept in a specific way: formulate criteria ([why](#why-criteria)-[how](#how-criteria)-[what is good](#what-good-criteria)?) when you expect confusion to arise
 3. As long as a term is not understood by the target group: replace it with your criteria ([why](#why-replace)-[how](#how-replace)?) 
-4. As soon as it’s understood: define the term with those criteria and replace the criteria in the text with the term. ([why]((#why-back-terms)-[how](#how-back-terms)?) 
+4. As soon as it’s understood: define the term with those criteria and replace the criteria in the text with the term. ([why](#why-back-terms)-[how](#how-back-terms)?)
 
 ### Example: Health Care intake
 
