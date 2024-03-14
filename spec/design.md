@@ -177,11 +177,11 @@ Although you might not fully agree that a 4-legged stool is no stool according t
 
 ##### Stools IN the criterium
 
-![Stools](https://github.com/henkvancann/terminology-governance-guide/images/Stools.png?raw=true)
+![Stools](https://github.com/trustoverip/ctwg-terminology-governance-guide/blob/main/images/Stools.png?raw=true)
 
 ##### Stools OUTSIDE the criterium
 
-![Stools](https://github.com/henkvancann/terminology-governance-guide/images/Non-stools.png?raw=true)
+![Not Stools](https://github.com/trustoverip/ctwg-terminology-governance-guide/blob/main/images/Non-stools.png?raw=true)
 
 ::: note Important consideration
 Communication, understanding and learning will sky rocket with clear criteria, invest time in them and earn time back further down the road.
