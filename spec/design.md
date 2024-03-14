@@ -1,7 +1,4 @@
 ## Terminology design aids
-::: note Basic Note
-  Check this out.
-:::
 
  “Why do we need to design terminology? Can’t we simply write our ideas down, look up some definitions and add them, or search for some explanatory texts if clear definitions lack in the heat of the writing process?"
 
@@ -9,7 +6,15 @@
 
  "Please let me just write my document and add some glossary items and we’re done. We skip all the academic hassle about *meaning, concepts, artefacts* and what have we. Let’s get work done!”
 
-You recognize a few of those remarks? If communication and understanding each other were just that easy, we could leave the hard part out. But **we can't skip the design of terminology** if we want to convey a (new) concept.
+### Do not proceed if
+
+You recognize a few of those remarks above? If communication and understanding each other were just that easy, we could leave the hard part out. But **we can't skip the design of terminology** if we want to convey a (new) concept.
+
+**Do not proceed with this chapter if you're a sender, only sending or broadcasting.**
+
+Because you need to understand first, to be understood.
+
+### One word solution (trailer)
 
 ::: warning Warning Notice
 Hold your breath for the magic word, **the solution for everything** in terminology design! 
@@ -27,9 +32,9 @@ Are you going to be faster, better, easier-going in writing texts? Will you be b
 
 The brief answer is *yes*. Just imprint this paragraph for more backing:
 
-::: note Why are we doing this?
+#### Why are we doing this?
+
 **Authors and curators** of texts can follow this guideline for terminology design in order to **create their terminology**, **invent smart criteria to distinguish their concepts from others**, thereby identifying their own concepts clearer, understand their peers better and finally **be understood better** and quicker by others.
-:::
 
 Oops the magic word is in there! Have you been able to locate it? No? Keep going!
 
@@ -51,13 +56,13 @@ At least one clear generally applicable criterium should come out of this step-b
 
 ```mermaid
 flowchart TD
-A[A:I am writing, Help Terminology!];B{B:Terms understood?};C[/C:Glossary/]; D{D:Text with criteria understood?}; 
+A[A:I am writing, but I need to explain something! Help!];B{B:Terms understood?};C[/C:Glossary/]; D{D:Text with criteria understood?}; 
 E[E:Term definition incl. criteria]; F[/F:Text with terms/];
     A --> |1: Identify concepts| B
     B --> |Yes, known term. Use ... | C
     B --> |2: No, I'll write criteria| D
     D --> |3: No, I'll adjust criteria| D
-    D --> |4: Yes, a term can be defined| E
+    D --> |4: Yes, understood! Now a term can be defined| E
     E --> |4: Replace criteria by term | F
     E --> |Add term def to ...| C
 ```
@@ -168,6 +173,14 @@ B{B:Terms understood?}; D{D:Text with criteria understood?};
 Another person should be able to apply wording to a certain concept and then be able to independently decide whether something falls in or out of the criterium. Example: if a stool is defined with the criterium "all furniture to comfortably sit on with exactly 3 legs from seat to each non-fixed contact point of the leg on the floor", then anyone could (dis)qualify various instances of something to sit on that looks like a stool to many.
 Although you might not fully agree that a 4-legged stool is no stool according to this definition with this criterium, the fact is that it's the generally applicable criterium that we were looking for.
 
+##### Stools IN the criterium
+
+![Stools](https://github.com/henkvancann/terminology-governance-guide/images/Stools.png?raw=true)
+
+##### Stools OUTSIDE the criterium
+
+![Stools](https://github.com/henkvancann/terminology-governance-guide/images/Non-stools.png?raw=true)
+
 ::: note Important consideration
 Communication, understanding and learning will sky rocket with clear criteria, invest time in them and earn time back further down the road.
 :::
@@ -230,10 +243,19 @@ AND then change the concept criteria in the text with the concept term:
 
 move the [[ref: stools]] into the van.
 
+#### Next time 
+You might come across a concept that has already been identified and defined with a term + criteria:
+
+```mermaid
+flowchart TD
+A[A:I am writing, but I need to explain something! Help!];B{B:Terms understood?};C[/C:Glossary/]
+    A --> |1: Identify concepts| B
+    B --> |Yes, known term. Use ... | C
+```
 
 ### Wrap up
 
-Isn’t the magic word "Criteria" a bit cruel? It might snatch the average human being in the heart of their weakness: understanding others. Yet "mutual understanding" is needed to be able to formulate criteria.
+Isn’t the magic word "Criteria" a bit cruel? It might snatch average human beings in the heart of their weakness: understanding others. Yet "mutual understanding" is needed to be able to formulate criteria.
 
 ### Move forward
 
@@ -243,5 +265,16 @@ Note that Terminology building is concise and extensive work. Beyond the basic t
   - **synomyms** {case dependent}
   - **forms** e.g. validations, Validation, Peer-to-peer Validation, etc.
 
+### Two for the road
+1. How could we incentivice people doing the hard work of proper terminology design?
 
-See more here: https://tno-terminology-design.github.io/design-methods/
+Ideas are welcome.
+
+2. Never forget the *magic* word: **Criteria**!
+
+### Further reading
+
+See more here: 
+- [TEv2 Design Methods Pages](https://tno-terminology-design.github.io/design-methods/)
+- [TEv2 Tools Repo](https://github.com/tno-terminology-design/tev2-tools)
+- [TEv2 Specifications Pages](https://tno-terminology-design.github.io/tev2-specifications)
