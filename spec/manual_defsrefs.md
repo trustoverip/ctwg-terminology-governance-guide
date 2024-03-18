@@ -1,47 +1,88 @@
 ## User manual defs and refs
 
-The normative section we call the “Spec-Up glossary tool” (SGT); to give a name to the coding project for now.
-
 #### Background
-To simplify the job of tech spec construction and editing, the Technology Stack WG has adopted the Spec-Up spec editing tool which is originally a DIF open source project. 
+To simplify the job of tech spec construction and editing, the Technology Stack WG has adopted the Spec-Up spec editing tool which is originally a DIF open source project ([here](https://github.com/decentralized-identity/spec-up)). 
 
-#### Objective (informative)
-Terminology has a life cycle. Some concepts and its specific terminology are long lived. They reside in their field related to other concepts. Other terminologies are contemporary. Terminology can have broad application or conversely have a very specific small niche. Nevetheless, they all share these characteristics:
-1. The sources need to be managed because its content is burdened with reputation
-2. References need to be managed in the digital world where creating copies is easy
-3. Different roles and responsibilities work on a terminology. We got to keep track who did what in which role. 
- 
+TrustoverIP invests in improving this tool: The [normative section](#spec-up-improvements) we call the “Spec-Up glossary tool” (SGT); to give a name to the coding project for now.
+
+#### Objective
+To offer authors and curators a hands-up guide to handle Spec-up's syntax correctly and efficiently with regard to `defs`, `refs` and `xrefs`. Thereby respecting the golden rule:
+
+ "try ref before def"
+
+([why?](#try-ref-before-def))
+
+#### Characteristics
+Why bother? Because it's going to be a mess soon if you don't. Terminology has a life cycle. Some concepts and its specific terminology are long lived. They reside in their field related to other concepts. Other terminologies are contemporary. Terminology can have broad application or conversely have a very specific small niche. Nevetheless, they all share these characteristics:
+1. The sources (definitions or defs) need to be managed, because its content is burdened with reputation
+2. References (or refs and xrefs) need to be managed in the digital world where creating copies is easy ands every copy for no reason whatsoever might cause confusion
+3. Different roles and responsibilities work with and work on a terminology. We got to keep track who did what in which role. 
+
+#### ToIP glossary
+
  In the ToIP Technology Architecture Specification it's a long-desired feature to add an integrated glossary. Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) should begin publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
 
-Process check:
+**Process check:**
 
-You should visually check each `def` created in a local Spec-Up document against *any `def`* that exists in any of the remotely referenced document URLs listed in the local document (see the “doctag” list description).
+::: note Status
+March 2024 - The feature "xref" is constructed, but not yet operational
+:::
+
+You should visually check each `def` created in a local Spec-Up document against *any `def`* that exists in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`).
+
+To find the list look for `external_specs`
+
+```
+      "external_specs": [
+        {
+          "TP": "https://trustoverip.github.io/ctwg-main-glossary/"
+        }
+        ...
+```
+
+##### Why "try ref before def" {#try-ref-before-def}
+
+These are the advantages of trying ref before def:
+- consensus building: if you study defs of related scopes under the same unmbrella you'll become more knowledgable and aware about the different fields
+- less work: its easier to adopt a definition with well-formed criteria than having to [design one](#terminology-design-aids) yourself
+- leading by example: you refs might be copied, enforcing the reputation of the def at hand.
+  
+Keep reading for an **important caveat** to these advantages! (No, [bring me there](#caveat-copy-def) now)  
 
 **Decide whether you'd like to adopt as is, adopt with comment or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
 
-#### Objective (normative)
+#### Functionality
 For an author there are mainly three relevant functionalities.
 1.  Spec-Up already has a basic glossary feature: `def` tags for defining glossary entries and `ref` tags for marking up terms in the spec that refer to def-tagged terms. Def tags only reference def tags *in the same* Spec-Up document.
-2. An `xref` tag to enhance Spec-Up code to support *remote* refs.
-3. Spec-Up code that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
+2. An `xref` supports *remote* refs.
+
+::: note Status
+March 2024 - The feature "xref" is constructed, but not yet operational
+:::
+
+3. We have functionality that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
    a. any ref tag defined in the spec has a corresponding def tag for the glossary entry, and  
    b. every def tag defining a glossary entry has at least one ref tag pointing to it.
 
-Consistency pre-caution:
+Supported consistency pre-cautions and reporting:
 
-Each `ref` has an existing `def`. Each `xref` has an existing `def` in the `doctag` glossary.
+::: note Status
+March 2024 - The feature "checks" is being constructed step-by-step, but not yet fully operational
+:::
 
-It should **check** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **remove** from a local file. 
+Each `def` in a local Spec-Up document that has **exactly the same** `def`* existing in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`). This is also a recomended visual check performed by authors. ([Why?]({#try-ref-before-def}))
 
-It should **signal** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **change** in a local file.  
+Each `ref` has an existing `def`. Each `xref` has an existing `def` in the `title`d glossary.
 
-| TBW | 
+It **checks** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **remove** from a local file. 
+
+It **signals** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **change** in a local file.  
 
 When a local Spec-Up document includes a certain glossary from another remote Spec-Up document, this can be considered as a statement: "we think we might be on the same page as the people that maintain this glossary".
 
 It's important to make explicit that somebody in a certain [role](./role.md#user-reader) added context to a remotely referenced term definition. Or he/she has chosen to refrain from that.
 
-#### Doctag (informative)
+#### Title (formerly "Doctag")
 
 ##### External linking (ref)
 
@@ -58,29 +99,34 @@ With this remote reference feature, all ToIP specifications (and any other deliv
 
 Mind you, this process touches group dynamics, consensus building and communication.
 
-##### Dangers of bluntly referencing and copying
+##### Dangers of bluntly referencing and copying  {#caveat-copy-def}
 
-It's important to note that team members in various [roles](#Roles) should feel free to define a term as they wish, **after studying what's available**.
+It's important to note that team members in various [roles](#Roles) should feel free to define a term as they wish, **after studying what's available**. This is an important caveat for refercing terms.
 
 #### Add context and metadata
-Adopting a term from a related scope (under the ToIP umbrella) or external SHOULD always be accompagnied with a possibility for the author, curator and maybe even other team members to add context to the definition adopted. The following metadata MUST be registered:
+
+::: note Status
+March 2024 - The feature "context metadata" is in design phase, so not operational
+:::
+
+Adopting a term from a related scope (under the ToIP umbrella) or external has the possibility for the author, curator and maybe even other team members to add context to the definition adopted. The following metadata will be (automatically as much as possible) registered:
 
 - `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
 - `url` of the spec in which the term definition list is present and the name of the header
 - `commit hash` of the term definition plus specification adopted
 - `authenticated github user` that adopts the term (create), changes it's context (update) or deletes the context.
 
-This metadata SHOULD be added:
+This metadata can be added:
 
 - `group name` from which the term will be adopted
 - `role` of the `authenticated github user` in the current scope
 
-You COULD add or remove:
+You could add or remove:
 - `context` which is a block of free text.
 
-The **order in which these changes take place** to a terminology definition, referencing and/or commenting SHOULD be registered.
+The **order in which these changes take place** to a terminology definition, referencing and/or commenting will be registered.
 
-Mind you: the adopter of a term SHOULD NOT delete, nor alter the original definition, present in another scope.
+Mind you: the adopter of a term can't delete, nor alter the original definition, present in another scope.
 
 #### Local versus Remote references
 Technically, the only difference between a local ref and a remote ref is that the former are always within the same Spec-Up document — they look like:
@@ -89,19 +135,36 @@ Technically, the only difference between a local ref and a remote ref is that th
 
 The latter allow the author to reference a def in a different Spec-Up document. They look something like:
 
-`[[xref: doctag, term]]` 
+::: note Status
+March 2024 - The feature "xref" is under testing, so not fully operational yet
+:::
 
-[[ref: doctag]] is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So any Spec-Up document that uses remote refs would need to include a doctag section that looks something like this:
+`[[xref: title, term]]` is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So any Spec-Up document that uses remote refs would need to include a doctag section that looks something like this:
 
-[[doctags:
-
-[toip:https://trustoverip.github.org/cwtg/toip-glossary.md]
-
-[hxwg:https://trustoverip.github.org/hxwg/hxwg-glossary.md]
-
-]]
+In `specs.json`:
+```
+      "external_specs": [
+        {
+          "<title>": "<URL>"
+        }
+```
+example
+```
+      "external_specs": [
+        {
+          "PE": "https://identity.foundation/presentation-exchange"
+        },
+        {
+          "TP": "https://trustoverip.github.io/ctwg-main-glossary/"
+        }
+        ...
+```
 
 ### Adopt, add context or define
+
+::: note Status
+March 2024 - The feature "context metadata" is in design phase, so not operational
+:::
 
 Check the flow diagram of writing terminology (references) in a specification [here](#flow-of-writing-a-specification-in-spec-up).
 
@@ -112,23 +175,27 @@ Check the flow diagram of writing terminology (references) in a specification [h
 
 Or *remote* reference
 
-`[[xref: doctag, term]]` 
+`[[xref: title, term]]` 
 
 Where `term` is either a term, abbreviation or alias.
 
 ##### How to adopt a term with added or updated context? {#adopt-context}
 
+::: note Status
+March 2024 - The feature "adopt a term with context and metadata" is in design phase, so not operational
+:::
+
 Add:
 `[[def: term or abbreviation or alias]]` with in the text part of the definition
 
-`[[xref: doctag, term]]` 
+`[[xref: title, term]]` 
 
 Reference:
 
 `[[ref: term]]` 
 
 **Example**
-Where `KE` is the doctag of KERI spec in spec-up format and `TP` the doctag of the ToIP overall glossary in spec-up.
+Where `KE` is the `title` (doctag) of KERI spec in spec-up format and `TP` the title of the ToIP overall glossary in spec-up.
 
 ```
 
@@ -142,17 +209,25 @@ Where `KE` is the doctag of KERI spec in spec-up format and `TP` the doctag of t
 
 ##### How to stop adding context to an adopted term?
 
+::: note Status
+March 2024 - The feature "adopt a term with context and metadata" is in design phase, so not operational
+:::
+
 Remove the local `def` and change
 
 `[[ref: term]]` into `[[xref: term]]`
 
 Now the term is again externally referenced "as is".
 
-#### Doctag (normative)
+### Normative section
+
+Have a look at it [here](#spec-up-improvements) and be informed that Spec-Up is a longer running open source project that's [originated in DIF](https://github.com/decentralized-identity/spec-up). ToIP invests in improvements to it in 2024. And offers these improvements as PRs to the DIF repo.
+
+Here we focus on the informative aspects of the technical specification: what is it, why are we programming this and how to use it.
 
 It is possible to include references to terms from external spec-up generated specifications. To include a source you would like to pull references from include an external_specs array in your spec config. The value should be a key/value object where the key is used in the external reference below and the value is the URL of the external spec.
 
-To include an external term reference within your spec use the following format `[[xref: {doctag}, {term}]]` where `{doctag}` is the title given to the spec in the `specs.json` configuration file and `{term}` is the term being used. 
+To include an external term reference within your spec use the following format `[[xref: {title}, {term}]]` where `{title}` is the title given to the spec in the `specs.json` configuration file and `{term}` is the term being used. 
 
 For example using the `PE` spec given in this example:
 ```json
@@ -168,8 +243,12 @@ For example using the `PE` spec given in this example:
 }
 ```
 
-### Internal definition (def)
+#### Internal definition (def)
 definitions (`def`s)
+
+::: note Status
+The feature "abbreviation" is under construction!
+:::
 
 ```
 [[def: term { | abbrev}, {alias}, {alias}, ... ]]
@@ -177,95 +256,66 @@ definitions (`def`s)
 ```
 {optinal}
 
-A `term` SHOULD be defined as a ToIP definition style : lower case
+Define a `term` in a ToIP definition style : lower case
 
-An `alias` COULD be referenced. If you do so the reference MUST end up at the definition of `term` This is already operational in the current version of Spec-Up and implemented with nested spans
+Optionally an `alias` could be referenced. If you do so the reference MUST end up at the definition of `term`. Test by simply clicking the link.
 
-::: ISSUE
-https://github.com/henkvancann/terminology-governance-guide/issues/1
+::: note More Info
+Check `defs` of aliases https://github.com/decentralized-identity/spec-up/blob/master/single-file-test/spec.md#term-references
+and the working `refs` here https://identity.foundation/spec-up/#term-references
 :::
 
-> Check `defs` of aliases https://github.com/decentralized-identity/spec-up/blob/master/single-file-test/spec.md#term-references
-and the working `refs` here https://identity.foundation/spec-up/#term-references
+An `abbrev` could be defined and referenced. If you do so a seperate definition of `abbrev` must be present in the document itself.
 
+::: note Status
+March 2024 - This feature "abbrev" is in design phase, so not operational
+:::
 
-`abbrev` COULD be defined and referenced. If you do so a seperate definition of `abbrev` MUST be present in the document itself:
-
-```
-[[def: abbrev]]
-~ [the term the abbrev refers to]
-
-Example of the duplet:
-
-[[def: KEL]]
-~ [[ref: key event log]]
-
-[[def: key event log | KEL, Key-event log ]]
-~ Lorem Ipsum ...
-
-```
-
-#### Don't do this
+##### Don't do this
 ```
 [[def: term (abbrev)]] and  
 [[ref: phrase]]
 ```
 but do this
+
+::: note Status
+March 2024 - This feature "abbrev" is in design phase, so not operational
+:::
+
 ```
 [[def: term | abbrev]]
 ```
 How to add an abbreviation after the term? Two ways possible:
 1. in the markdown, but NOT in the reference to the term:
   [[ref:]]
-There will be post-markdown processing available to proportionally add abbreviation
+2. There will be post-markdown processing available to proportionally add abbreviation
 
-### Internal linking (ref)
+
+#### Internal linking (ref)
 
 ```
 [[ref: phrase]]
 ```
 `phrase` MUST be one of `term`, `abbrev` or `alias`
 
-
 Three ways of offering references (`ref`s) to definitions (`def`s) by the author of a text:
 1. explicitly created by author
 2. extra by default, after n occurrences or below a header of certain level
 
-
 1. MUST be done in the source by hand
 2. MUST be done by code, we'll add a data-attribute to the resulting hrml that indicates the origin of the link.
-
 
 | TBW where is the registry to ensure uniqueness of doctags and prevention of duplicious doctags? |
 
 
 ## System feature Consistency
 
-Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with all kinds of working internal and external links and clear rules for writers.
+Have a look at it [here](#spec-up-improvements) and be informed that Spec-Up is a longer running open source project that's [originated in DIF](https://github.com/decentralized-identity/spec-up). ToIP invests in improvements to it in 2024. And offers these improvements as PRs to the DIF repo.
 
-### Basic domain checks
-1. characterset
-2. spaces
-   [[def:<term>]] and [[def: <term>]]
-3. Uppercase versus lowercase
-4. Form Phrases
-   | TBW |
-   
-### Domain checks Spe-Up or github actions
-1. No abbrevs in the text of a term either in "()" or after ";"
-2. The system must warn for double aliases in one def
-3. The system must warn for double abbrevs in one def
-4. No duplicity in wording in term, abbrev and alias(ses)
-5. If term and abbrev are the same, discard abbrev
-6. If alias and term are the same, discard alias
-7. If abbrev and alias are the same, discard alias
-
-| TBW What is 'the same' ? |
-
-### Parser checks Spe-Up or github actions
-1. The system must warn for double aliases in more than one def
-2. The system must warn for double abbrevs in more than one def
-3. The system must report broken internal links, refs that don't match term, abbrev nor aliasses.
+The tool will perform
+- Basic domain checks
+- Domain checks Spe-Up or github actions
+- Parser checks Spe-Up or github actions
 
 ### External Consistency
 We like reuse of existing terminology, laid out in definitions and glossaries. If applied correctly, reuse will increase consensus within TrustoverIP.
@@ -290,7 +340,7 @@ The governance rules that we have to put in place (at least with the ToIP commun
 
 Of course, this set of rules only works within an coherent community willing to follow them. We can’t control the use of terminology outside of the ToIP community.
 
-## System feature functionality
+## System feature functionality  {#post-processing}
 
 The front-end functionality of the resulting github.io page can and must be altered to comply with various Reader allowances:
 - Only so and so often a link to known term in the glossary

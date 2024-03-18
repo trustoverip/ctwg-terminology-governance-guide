@@ -1,4 +1,4 @@
-## Normative addendum - Spec-up improvements
+## Normative addendum - Spec-up improvements  {#spec-up-improvements}
 
 This normative section is also called the “Spec-Up glossary tool” (SGT).
 
@@ -96,13 +96,14 @@ Three ways of offering references (`ref`s) to definitions (`def`s) by the author
 | TBW where is the registry to ensure uniqueness of doctags and prevention of duplicious doctags? |
 
 
-
 ##### System feature Consistency
 
 Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with all kinds of working internal and external links and clear rules for writers.
 
    
 #### Consistency pre-caution
+
+Each `def` in a local Spec-Up document that has **exactly the same** `def`* existing in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`). 
 
 Each `ref` has an existing `def`. Each `def` has at least one `ref` or `xref`. 
 
@@ -325,22 +326,12 @@ It's important to make explicit that somebody in a certain [role](./role.md#user
 ```
 `phrase` MUST be one of `term` in any of `title`'s glossary.
 
-For example, a specification that includes a `ref` tag that looks like this: `[[xref : toip, term]]` would reference a def tag defined in the ToIP Glossary. Similarly, a ref that looks like `[[ref: hxwg, term]]` would reference a defined term in the (theoretical) HXWG glossary.
+For example, a specification that includes a `ref` tag that looks like this: `[[xref : TP, term]]` would reference a def tag defined in the ToIP Glossary. Similarly, a ref that looks like `[[xref: hxwg, term]]` would reference a defined term in the (theoretical) HXWG glossary.
 
 With the remote reference feature, all ToIP specifications (and any other deliverable written with Spec-Up) would be able to include linked glossary terms (including hover pop-up definitions), both from within its own glossary and from any referenced glossary in another document that also uses Spec-Up.
 
 ::: warning Non-technical characteristic
 Mind you, this process touches group dynamics, consensus building and communication.
-:::
-
-### External Consistency
-We like reuse of existing terminology, laid out in definitions and glossaries. If applied correctly, reuse will increase consensus within TrustoverIP.
-
-Given this positive effect we encourage people to look what's there already before defining and writing your own definition.
-
-::: note KERISSE
-How do we know which known glossary to use? Maybe any glossary we have previously created a cross reference from should be included?
-There is already tooling available to include existing glossaries and give a unified overview of them in [KERISSE](https://weboftrust.github.io/WOT-terms/docs/glossary-unified?level=2). This listing can be adjusted to "ToIP only".
 :::
 
 

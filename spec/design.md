@@ -1,14 +1,10 @@
 ## Terminology design aids
 
- “Why do we need to design terminology? Can’t we simply write our ideas down, look up some definitions and add them, or search for some explanatory texts if clear definitions lack in the heat of the writing process?"
-
- "We don’t have a problem, do we? Why all the fuzz and juggling all these terms and definitions about terms and definitions? It’s not getting better, is it?
-
- "Please let me just write my document and add some glossary items and we’re done. We skip all the academic hassle about *meaning, concepts, artefacts* and what have we. Let’s get work done!”
+ "Please let me just write my document and add some glossary items and we’re done. We skip all the academic hassle about *meaning, concepts, artefacts* and what have we. Let’s get some work done!”
 
 ### Do not proceed if...
 
-Cliff hanger! First, do you recognize a few of the emotional remarks above (under "Terminology design aids")? 
+Cliff hanger! First, do you recognize the emotional remarks above (under "Terminology design aids")? 
 
 Why can't we give in? Simply skip the nerdy stuff? The reason is devastatingly basic: 
 
