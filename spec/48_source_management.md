@@ -65,7 +65,7 @@ b. Allow everyone with a GitHub account to edit the wiki, which makes the wiki m
 
 This flexibility allows project maintainers to either keep their wikis as collaborative spaces open to the wider GitHub community or restrict them to be consistent with the access controls applied to the source code in the repository. It's worth noting that these settings can be changed at any time by the repository owner or users with admin access to the repository.
 
-Now `editors` can us the wiki of the target repo to CRU term definition. Please describe separate use cases for C, R, U. Delete is not allowed.
+Now `editors` can us the wiki of the target repo to CRU term definition. We describe separate use cases for C, R, U. Delete is very rare, because the history of terms should be kept available.
 
 `Curators` could add markdown comments to the sources of the wiki.
 
