@@ -43,7 +43,9 @@ Github Actions will pick up and process changes as they occur.
 
 This is the process diagram
 
-![Terms-dir-circular](https://github.com/henkvancann/terminology-governance-guide/blob/be980e063e99f97cbb14093735ed42d9e8d617e2/images/Terms-dir-circular.png?raw=true)
+![Terms-dir-circular](https://github.com/trustoverip/ctwg-terminology-governance-guide/blob/eb572181e2e66fa8453162affa25b86a7c984838/images/Terms-dir-circular.png?raw=true)
+
+
 
 These are the two main options we have use cases for:
 - A. Wiki based = edits WITHOUT curation and PR are possible, see 1. below
