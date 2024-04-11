@@ -4,35 +4,50 @@
 
 Input knowledge level: You know how to create, read and update term definitions in relation to | TBW how to edit a wiki entry |
 
+### What
+This section is about the source management of term and definitions: the latest single source of truth about them in a certain scope. The elementary part is {term}.md file that contains (spec-up extended) markdown. We offer various ways of managing these source files with integrity.
+
+### What can I do with it?
+Source management culminates in the *latest version* of any glossary in which the term are accessible (linkable) with a *persistent URL* and we have a *history avaiable* who referered this term at what time in the past.
+You can reference this glossary in your own write ups and add to the general consensus about terms at the same time.
+
 ### Why
-We want to offer multiple ways to edit term definitions. So not wiki or markdown or github frontend but  wiki and markdown and github frontend. The end-result is always a git(hub) tracked directory with separate .md files of a spec-up based specification. The use case are described below. The term definitions themselves use the spec-up markdown extensions syntax: `def`, `ref` and `xref`.
+We want to offer multiple ways to edit term definitions. So not wiki **or** markdown **or** github frontend but wiki **and** markdown **and** github frontend. 
+The end-result is always a git(hub) tracked directory with separate .md files of a spec-up based specification. The use case are described below. The term definitions themselves use the spec-up markdown extensions syntax: `def`, `ref` and `xref`.
 
 Example given:
 
 ``` markdown
 [[def: access control]]: 
-~ The process of granting or denying specific [[ref: request]]s for obtaining and using information and related information [[xref: processing]] services.
+~ The process of granting or denying specific [[ref: request]]s for obtaining 
+and using information and related information [[xref: processing]] services.
 ```
 
 ### Who
-The roles involved in the use cases are editor, production repo master and curator
+The roles involved in the use cases are editor, production repo master and curator.
 One person could have more than one role.
 
 All roles have a github user account, because we need to know 
-- who proposes a change on what and when this occurred.
+- *who* proposes a change on *what* and *when* this occurred.
 - who changes what and when. 
 Git keeps track.
 
 He/she who has write user rights on the target repo (TrustoverIP main glossary)  can directly edit and commit the latest version. Other roles will have to adapt to those results. For example merge confilcts might arise and need to be solved.
 
-Guidelines:
-editors COULD have a fork of the repo. They NEED TO have a forked target repo for option 2, 3 and 4 below.
- 
-curators don't need to have a user github repo, only a github user account and they use the functionality to comment on PRs.
+Further guidelines:
+- editors COULD have a fork of the repo. They NEED TO have a forked target repo for option 2, 3 and 4 below.
+- curators don't need to have a user github repo, only a github user account and they use the functionality to comment on PRs.
+
+### How 
+Github Actions will pick up and process changes as they occur.
+
+This is the process diagram
+
+![Terms-dir-circular](https://github.com/henkvancann/terminology-governance-guide/blob/be980e063e99f97cbb14093735ed42d9e8d617e2/images/Terms-dir-circular.png?raw=true)
 
 These are the two main options we have use cases for:
-A. Wiki based = edits WITHOUT curation and PR are possible, see 1.
-B. PR based WITH optinal curation and **mandatory** PRs, see option 2, 3 and 4.
+- A. Wiki based = edits WITHOUT curation and PR are possible, see 1. below
+- B. PR based WITH optinal curation and **mandatory** PRs, see option 2, 3 and 4 below.
 
 ### 1. Wiki
 
