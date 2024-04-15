@@ -82,7 +82,7 @@ Now `editors` can us the wiki of the target repo to CRU term definition. We desc
 > NB: Editing of the target github wiki repo on your local machine is possible but a rather strange way to manage sources of your terms definitions. But it can be done if you have the user rights: push the wiki repo to the target wiki repo.
 > We advise to choose one of the other source management options, because it's more direct.
 
-::: NOTE
+::: note Basic Note
 After this source editing has been saved our solution also overwrites the repo file `/spec/splitted-dir/{term}.md` (if present) for syncing purposes.
 :::
 
@@ -91,7 +91,7 @@ Editors go the the term definition they want to C R U on the github.com user sit
 
 This way editors can edit (after having forked the target repo to their own user account) the term definition and offer a PR to master. After the PR is made the curator can comment on the changes proposed and live viewable on the user account of the editor.
 
-::: NOTE
+::: note Basic Note
 After this source editing have been saved our solution also overwrites the wiki repo file `/{term}.md` (if present) for syncing purposes.
 :::
 
@@ -99,7 +99,7 @@ After this source editing have been saved our solution also overwrites the wiki 
 
 This way editors can edit (after having cloned the target repo to their own user account). He/she uses a text editor to write changes in the separate .md file of the term and definitions directory. He/she use git on the command line to add, commit and push files to their own github user account version of the target repo. From the target repo he/she creates a PR by hand for the curator and the master to assess and eventually accept or decline. After the PR is made the curator can comment on the changes proposed and live viewable on the user account of the editor.
 
-::: NOTE
+::: note Basic Note
 After this source editing have been saved our solution also overwrites the wiki repo file `/{term}.md` (if present) for syncing purposes.
 :::
 
@@ -113,7 +113,7 @@ The end result is a 4 options to make changes and 2 options to get the results a
 
 All methods have full git tracing of who did what and when.
 
-::: NOTE
+::: note Basic Note
 After this source editing have been saved our solution also overwrites the wiki repo file `/{term}.md` (if present) for syncing purposes.
 :::
 
