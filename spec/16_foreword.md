@@ -15,7 +15,7 @@ The mission of the Trust over IP (ToIP) Foundation is to define a complete archi
 
 Any trade name used in this document is information given for the convenience of users and does not constitute an endorsement.
 
-This document was prepared by the ToIP Technical Stack Working Group.
+This document was prepared by the ToIP Concepts and Terminology Working Group.
 
 Any feedback or questions on this document should be directed to https://github.com/trustoverip/specification/issues
 

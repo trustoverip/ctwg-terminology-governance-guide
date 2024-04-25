@@ -35,8 +35,10 @@ But unfortunately **not together with referencing existing poorly-formulated def
 
 ### Towards automatic processing in github actions
 
+Currently we allow for four types of source management tools of terminologies in ToIP context. 
+Check them out here: | TBW Link to the chapter |.
 
-Currently github wikis serve as the source management tool of the glossary terms in ToIP context. There are temporary exceptions.
+This example uses the github.com wiki of the target repository, but the other source management options could adopt the same guidelines for designing and editing a terminology in ToIP context. 
 
 Here are a few [practical rules](https://wiki.trustoverip.org/display/HOME/Terms+Wikis) from the originator ToIP to get these wiki terms through their equivalent [github actions script](https://github.com/WebOfTrust/WOT-terms/actions/workflows/content-fetch-and-deploy-update-glossary.yml), please:
 1. beware all new wiki items you **create**, lead to new .md files. Because we'd like to know about new definitions, flant them in discussions or social media: throw links!
@@ -50,7 +52,9 @@ Here are a few [practical rules](https://wiki.trustoverip.org/display/HOME/Terms
 _Have fun CRU-ing!_  
 '* CRU=Create Read Update
 
-### A glossary "reads" this wiki
+### A glossary "reads" this 
+
+| TBW this section is draft and incomplete|
 
 Where as the wiki source management tool (or *input tool*) of terminology, there is no way to add metadata to the terminology.
 
