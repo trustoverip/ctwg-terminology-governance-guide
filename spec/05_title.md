@@ -5,7 +5,7 @@ Terminology Governance Guide
 
 **Latest Draft:**
 
-[https://github.com/henkvancann/terminology-governance-guide](https://github.com/trustoverip/terminology-governance-guide)
+[https://github.com/henkvancann/terminology-governance-guide](https://github.com/trustoverip/ctwg-terminology-governance-guide)
 
 **Editors:**
 
