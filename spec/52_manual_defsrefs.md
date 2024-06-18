@@ -1,4 +1,4 @@
-## User manual defs and refs
+## User manual defs, refs and xrefs
 
 #### Background
 To simplify the job of tech spec construction and editing, the Technology Stack WG has adopted the Spec-Up spec editing tool which is originally a DIF open source project ([here](https://github.com/decentralized-identity/spec-up)). 
@@ -8,7 +8,7 @@ TrustoverIP invests in improving this tool: The [normative section](#spec-up-imp
 #### Objective
 To offer authors and curators a hands-up guide to handle Spec-up's syntax correctly and efficiently with regard to `defs`, `refs` and `xrefs`. Thereby respecting the golden rule:
 
- "try ref before def"
+ "try (x)ref before def"
 
 ([why?](#try-ref-before-def))
 
