@@ -13,20 +13,20 @@ To offer authors and curators a hands-up guide to handle Spec-up's syntax correc
 ([why?](#try-ref-before-def))
 
 #### Characteristics
-Why bother? Because it's going to be a mess soon if you don't. Terminology has a life cycle. Some concepts and its specific terminology are long lived. They reside in their field related to other concepts. Other terminologies are contemporary. Terminology can have broad application or conversely have a very specific small niche. Nevetheless, they all share these characteristics:
+Why bother? Because it's going to be a mess soon if you don't. Terminology has a life cycle. Some concepts and its specific terminology are long lived. They reside in their field related to other concepts. Other terminologies are contemporary. Terminology can have broad application or conversely have a very specific small niche. Nevertheless, they all share these characteristics:
 1. The sources (definitions or defs) need to be managed, because its content is burdened with reputation
 2. References (or refs and xrefs) need to be managed in the digital world where creating copies is easy ands every copy for no reason whatsoever might cause confusion
 3. Different roles and responsibilities work with and work on a terminology. We got to keep track who did what in which role. 
+
+#### Governance of own repo
+The governance of def & refs in the own repo has to be strict: it has to be kept sound by humans: So check you refs if you change the def.  
+[Source](https://wiki.trustoverip.org/display/HOME/2024-07-01+CTWG+Meeting+Notes)
 
 #### ToIP glossary
 
  In the ToIP Technology Architecture Specification it's a long-desired feature to add an integrated glossary. Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) should begin publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
 
 **Process check:**
-
-::: note Status
-March 2024 - The feature "xref" is constructed, but not yet operational
-:::
 
 You should visually check each `def` created in a local Spec-Up document against *any `def`* that exists in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`).
 
@@ -218,6 +218,31 @@ Remove the local `def` and change
 `[[ref: term]]` into `[[xref: term]]`
 
 Now the term is again externally referenced "as is".
+
+### Form phrase macros
+By: Rieks Joosten, July 1 2014
+
+How to deal with singular/plural forms, here's my 2 cents:
+TL;DR: In order to support different forms of terms, I suggest to follow ideas from TEv2:
+Allow a definition syntax that supports what TEv2 calls **form phrase macros**. For example, `[[def: actor{ss} ]]`, or `[[def: part{yies}]]`
+Consider making the mapping between form phrase macros and the strings they represent, configurable. For example, `{ss}` maps to the set of strings: "", "s", "'s", "s'".
+When converting a document, make a list of the definitions, and replace every term therein with the string that results from resolving the form phrase macros therein (if any), and regularizing the results. This would result in [[def: actor, actors, actor's, actors']]. Regularization is a mechanism that facilitates texts being handled by machines, similar to how titles of Wiki pages are converted into the corresponding parts of their URLs. Regularization would turn `[[def: Term 1, Term One]]` into `[[def: term-1, term-one]]`.
+When converting a REF or XREF, use the regularized version of the term used in the (X)REF to look for the definition.
+
+#### Elaboration Form phrase macros
+Here is some elaboration/background:
+I think the issue is broader: it's not just singular/plural forms (of nouns), e.g., "actor", "actors", "party", "parties", but also their possessive forms "actor's", "actors'", "party's", "parties". It's also various conjugation forms of verbs, e.g., "define", "defines", "defined", "defining", or "identify", "identifies", "identified", "identifying".
+To come to grips with this broader issue, TEv2 introduces "form phrases", i.e., one of the (multiple) forms in which concepts can be referred to. For example, the form phrases "actor", "actors", "actor's", etc. all refer to the same concept. That's why they can be specified in (the formPhrases field of) the curated text that documents that concept.
+To reduce the work for creating such form phrases (and indeed, also to prevent typing mistakes!), TEv2 also introduces "form phrase macros", i.e., little strings, such as "{ss}" or "{yies}" that can be included in a form phrase, and represent a particular kind of variations. For example, "actor{ss}" is shorthand for "actor", "actors", "actor's" and "actors'". Similarly "part{yies}" is short for "party", "party's" and "parties". A number of such form phrase macro's are predefined, but you can override this set of macro's with a set of your own, which is useful if texts are written in other languages (French, Dutch), or if you want or need to do your own. When generating the machine readable glossaries (MRGs, the authoritative sources of terminologies/definitions as far as TEv2 is concerned), all form phrases as specified in the curated texts are converted into a canonical form (a regularized text) and their macros are expanded. Thus, an MRG-entry only contains regularized form phrases, which helps for easy processing.
+TEv2 includes a TermRef Resolution Tool (TRRT) that converts termrefs into so-called 'renderable refs'.
+
+TermRefs are identified by a regex (called the TRRT interpreter) that is expected to populate particular variables, one of which is called showtext, which contains the text that will be rendered. Another is called term; it contains the default name for the concept being referenced. The TRRT finds all texts that satisfy the regex, and will replace them in the end with a character sequence that we call a 'renderable ref' (see point c)
+The variables (named capturing groups) are then used to find the MRG that contains the term being referenced (there is a default MRG in case such variables are empty). From the selected or default MRG, a single entry needs to be found that corresponds with the termref. This is done by using the term variable (which often is empty), or, when it is empty, by using the showtext variable (which always exists) as a starting point. These texts are first processed into some canonical form, called a regularized text, so that they can be used to compare with entries in the formPhrases field of MRG entries. When a match is found, that MRG entry will be selected to create the renderable ref.
+
+A 'renderable ref' is created by executing a handlebars template, which can access all fields in the MRG entry, as well as all named capturing groups as populated by the regex. This means that it is fully up to those that run the tool to determine what the renderable ref looks like.
+The TEv2 MVP has an interpreter for Spec-Up term references, meaning it can find constructs of the form` [[ref: {showtext}]]` and `[[ref: {showtext}, {term}]]` as valid references.  It can also find constructs of the form `[[xref: {scopetag}, {showtext}]]` All that is needed is a proper regex that finds occurrences of such syntax, and populates the appropriate named capturing groups. The modification to also support syntaxes such as `[[xref: {scopetag}:{vsntag}, {showtext}]]` are trivial.
+
+[Source Rieks Joosten July 1 2024](https://trustoverip.slack.com/archives/C01BBNGRPUH/p1719842141807949)
 
 ### Normative section
 
