@@ -1,7 +1,7 @@
 Terminology Governance Guide
 ==================
 
-**Specification Status**: v0.6 Draft
+**Specification Status**: v0.8 Draft
 
 **Latest Draft:**
 
@@ -13,6 +13,7 @@ Terminology Governance Guide
 
 **Contributors:**
 - Neil Thomson
+- Carly Huitema
 - [Darrell O'Donnell](https://github.com/darrellodonnell), [Continuum Loop Inc.](https://www.continuumloop.com)
 - Rieks Joosten
 - Drummond Reed
@@ -25,18 +26,9 @@ Terminology Governance Guide
 **Participate:**
 
 *In the Guide:*
-
-| TBW |
+It's mainly a summary of activities and decisions of CTWG in 2024; editor: Henk van Cann
 
 *Template improvements:*
-~ [GitHub repo](https://github.com/trustoverip/specification-template)
+~ [GitHub repo](https://github.com/trustoverip/spec-up-t)
 
-~ [Commit history](https://github.com/trustoverip/specification-template/commits/main)
-
-------------------------------------
-
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (\maketitle)
-
-[//]: # (\newpage)
+~ [Commit history](https://github.com/trustoverip/spec-up-t/commits/main)

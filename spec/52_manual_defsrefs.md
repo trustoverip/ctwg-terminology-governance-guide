@@ -10,23 +10,23 @@ This document also contains a [normative section](#spec-up-improvements) that ha
 #### Objective
 To offer authors and curators a hands-up guide to handle Spec-up's syntax correctly and efficiently with regard to `defs`, `refs` and `xrefs`. Thereby respecting the golden rule:
 
- "try (x)ref before def"
+ "Try `(x)ref` before `def`"
 
 ([why?](#try-ref-before-def))
 
 #### Characteristics
 Why bother? Because it's going to be a mess soon if you don't. Terminology has a life cycle. Some concepts and their specific terminology are long-lived. They reside in their field and are related to other concepts. Other terminologies are contemporary. Terminology can have broad applications or, conversely, have a specific small niche. Nevertheless, they all share these characteristics:
 1. The sources (definitions or defs) need to be managed because its content is burdened with reputation
-2. References (or refs and xrefs) need to be managed in the digital world where creating copies is easy and every copy for no reason whatsoever might cause confusion
+2. References (or refs and xrefs) need to be managed in the digital world where creating copies is easy, and every copy for no reason whatsoever might cause confusion
 3. Different roles and responsibilities work with and work on terminology. We got to keep track of who did what in which role. 
 
 #### Governance of own repo
-The governance of def & refs in the own repo has to be strict: It has to be kept sound by humans. So check you refs if you change the def.  
+The governance of def & refs in the own repo has to be strict: It has to be kept sound by humans. So check your refs to see if you changed the def.  
 [Source](https://wiki.trustoverip.org/display/HOME/2024-07-01+CTWG+Meeting+Notes)
 
 #### ToIP glossary
 
- In the ToIP Technology Architecture Specification, it's a long-desired feature to add an integrated glossary. Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) should begin publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
+ In the ToIP Technology Architecture Specification, it's a long-desired feature to add an integrated glossary. Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) should begin publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted, and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
 
 **Process check:**
 
@@ -51,7 +51,7 @@ These are the advantages of trying ref before def:
   
 Keep reading for an **important caveat** to these advantages! (No, [bring me there](#caveat-copy-def) now)  
 
-**Decide whether you'd like to adopt as is, adopt with a comment or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
+**Decide whether you'd like to adopt as is, adopt with a comment, or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
 
 #### Functionality
 For an author, there are three main relevant functionalities.
@@ -63,7 +63,7 @@ March 2024 - The feature "xref" is constructed but not yet operational
 :::
 
 3. We have functionality that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
- a. any ref tag defined in the spec has a corresponding def tag for the glossary entry and  
+ a. any ref tag defined in the spec has a corresponding def tag for the glossary entry, and  
  b. every def tag defining a glossary entry has at least one ref tag pointing to it.
 
 Supported consistency pre-cautions and reporting:
@@ -80,7 +80,7 @@ It **checks** each `ref` and `xref` created in reference `doctags` against *any 
 
 It **signals** each `ref` and `xref` created in reference `doctags` against *any `def`* that you're about to **change** in a local file.  
 
-When a local Spec-Up document includes a certain glossary from another remote Spec-Up document, this can be considered as a statement: "we think we might be on the same page as the people that maintain this glossary".
+When a local Spec-Up document includes a certain glossary from another remote Spec-Up document, this can be considered as a statement: "We think we might be on the same page as the people that maintain this glossary."
 
 It's important to make explicit that somebody in a certain [role](./role.md#user-reader) added context to a remotely referenced term definition. Or he/she has chosen to refrain from that.
 
@@ -88,7 +88,7 @@ It's important to make explicit that somebody in a certain [role](./role.md#user
 
 ##### External linking (ref)
 
-We need the capability for all ToIP specs to use remote refs to reference a common ToIP Glossary in addition to their own internal glossary. So far an inventarisation under TSWG spec authors would be fine with that capability: they can use any term already defined in the ToIP Glossary without having to repeat it in their glossary, and they can add any term specific to their spec.
+We need the capability for all ToIP specs to use remote refs to reference a common ToIP Glossary in addition to their own internal glossary. So far, an incentivization under TSWG spec authors would be fine with that capability: they can use any term already defined in the ToIP Glossary without having to repeat it in their glossary, and they can add any term specific to their spec.
 
 ```
 [[ref: group#phrase]]
@@ -116,7 +116,7 @@ Adopting a term from a related scope (under the ToIP umbrella) or externally has
 - `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
 - `URL` of the spec in which the term definition list is present and the name of the header
 - `commit hash` of the term definition plus specification adopted
-- `authenticated GitHub user` that adopts the term (create) changes its context (update), or deletes the context.
+- `authenticated GitHub user` that adopts the term (create), changes its context (update) or deletes the context.
 
 This metadata can be added:
 
@@ -141,7 +141,7 @@ The latter allows the author to reference a def in a different Spec-Up document.
 March 2024 - The feature "xref" is under testing, so it is not fully operational yet
 :::
 
-`[[xref: title, term]]` is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So any Spec-Up document that uses remote refs would need to include a doctag section that looks something like this:
+`[[xref: title, term]]` is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So, any Spec-Up document that uses remote refs would need to include a `doctag` section that looks something like this:
 
 In `specs.json`:
 ```
@@ -170,7 +170,7 @@ March 2024 - The feature "context metadata" is in the design phase, so it is not
 
 Check the flow diagram of writing terminology (references) in a specification [here](#flow-of-writing-a-specification-in-spec-up).
 
-##### How to adopt the term "as is"? {#adopt-asis}
+##### How do we adopt the term "as is"? {#adopt-asis}
 
 *Local* preferable
 `[[xref: term]]` 
@@ -179,9 +179,9 @@ Or *remote* reference
 
 `[[xref: title, term]]` 
 
-Where `term` is either a term, abbreviation or alias.
+Where `term` is either a term, abbreviation, or alias.
 
-##### How to adopt a term with added or updated context? {#adopt-context}
+##### How do you adopt a term with added or updated context? {#adopt-context}
 
 ::: note Status
 March 2024 - The feature "adopt a term with context and metadata" is in the design phase, so it is not operational
@@ -209,7 +209,7 @@ Where `KE` is the `title` (doctag) of the KERI spec in spec-up format and `TP` i
 
 ```
 
-##### How to stop adding context to an adopted term?
+##### How do you stop adding context to an adopted term?
 
 ::: note Status
 March 2024 - The feature "adopt a term with context and metadata" is in the design phase, so it is not operational.
@@ -219,7 +219,7 @@ Remove the local `def` and change.
 
 `[[ref: term]]` into `[[xref: term]]`
 
-Now, the term is again externally referenced as "as is".
+Now, the term is again externally referenced as "as is."
 
 ### Form phrase macros
 By: Rieks Joosten, July 1 2014
@@ -228,18 +228,18 @@ How to deal with singular/plural forms, here's my 2 cents:
 TL;DR: In order to support different forms of terms, I suggest to follow the ideas from TEv2:
 Allow a definition syntax that supports what TEv2 calls **form phrase macros**. For example, `[[def: actor{ss} ]]`, or `[[def: part{yies}]]`
 Consider making the mapping between form phrase macros and the strings they represent configurable. For example, `{ss}` maps to the set of strings: "", "s", "'s", "s'".
-When converting a document, make a list of the definitions, and replace every term therein with the string that results from resolving the form phrase macros therein (if any), and regularizing the results. This would result in [[def: actor, actors, actor's, actors']]. Regularization is a mechanism that facilitates the machine's handling of texts, similar to how titles of Wiki pages are converted into the corresponding parts of their URLs. Regularization would turn `[[def: Term 1, Term One]]` into `[[def: term-1, term-one]]`.
+When converting a document, make a list of the definitions, and replace every term therein with the string that results from resolving the form phrase macros therein (if any) and regularizing the results. This would result in [[def: actor, actors, actor's, actors']]. Regularization is a mechanism that facilitates the machine's handling of texts, similar to how titles of Wiki pages are converted into the corresponding parts of their URLs. Regularization would turn `[[def: Term 1, Term One]]` into `[[def: term-1, term-one]]`.
 When converting a REF or XREF, use the regularized version of the term used in the (X)REF to look for the definition.
 
 #### Elaboration Form phrase macros
 Here is some elaboration/background:
 I think the issue is broader: it's not just singular/plural forms (of nouns), e.g., "actor", "actors", "party", "parties", but also their possessive forms "actor's", "actors'", "party's", "parties". It's also various conjugation forms of verbs, e.g., "define", "defines", "defined", "defining", or "identify", "identifies", "identified", and "identifying".
 To come to grips with this broader issue, TEv2 introduces "form phrases", i.e., one of the (multiple) forms in which concepts can be referred to. For example, the form phrases "actor", "actors", "actor's", etc. all refer to the same concept. That's why they can be specified in (the formPhrases field of) the curated text that documents that concept.
-To reduce the work for creating such form phrases (and indeed, also to prevent typing mistakes!), TEv2 also introduces "form phrase macros", i.e., little strings, such as "{ss}" or "{yies}" that can be included in a form phrase, and represent a particular kind of variations. For example, "actor{ss}" is shorthand for "actor", "actors", "actor's" and "actors'". Similarly, "part{yies}" is short for "party," "party's," and "parties." A number of such form phrase macros are predefined, but you can override this set of macros with a set of your own, which is useful if texts are written in other languages (French, Dutch) or if you want or need to do your own. When generating the machine-readable glossaries (MRGs, the authoritative sources of terminologies/definitions as far as TEv2 is concerned), all form phrases as specified in the curated texts are converted into a canonical form (a regularized text), and their macros are expanded. Thus, an MRG-entry only contains regularized form phrases, which helps for easy processing.
+To reduce the work for creating such form phrases (and indeed, also to prevent typing mistakes!), TEv2 also introduces "form phrase macros", i.e., little strings, such as "{ss}" or "{yies}" that can be included in a form phrase, and represent a particular kind of variations. For example, "actor{ss}" is shorthand for "actor", "actors", "actor's" and "actors'". Similarly, "part{yies}" is short for "party," "party's," and "parties." A number of such form phrase macros are predefined, but you can override this set of macros with a set of your own, which is useful if texts are written in other languages (French, Dutch) or if you want or need to do your own. When generating the machine-readable glossaries (MRGs, the authoritative sources of terminologies/definitions as far as TEv2 is concerned), all form phrases as specified in the curated texts are converted into a canonical form (a regularized text), and their macros are expanded. Thus, an MRG entry only contains regularized form phrases, which helps with easy processing.
 TEv2 includes a TermRef Resolution Tool (TRRT) that converts termrefs into so-called 'renderable refs'.
 
-TermRefs are identified by a regex (called the TRRT interpreter) that is expected to populate particular variables, one of which is called showtext, which contains the text that will be rendered. Another is called `term`; it contains the default name for the concept being referenced. The TRRT finds all texts that satisfy the regex and will replace them in the end with a character sequence that we call a 'renderable ref' (see point c)
-The variables (named capturing groups) are then used to find the MRG that contains the term being referenced (there is a default MRG in case such variables are empty). From the selected or default MRG, a single entry needs to be found that corresponds with the termref. This is done by using the term variable (which often is empty) or, when it is empty, by using the showtext variable (which always exists) as a starting point. These texts are first processed into some canonical form, called a regularized text, so that they can be used to compare with entries in the formPhrases field of MRG entries when a match is found, that MRG entry will be selected to create the renderable ref.
+TermRefs are identified by a regex (called the TRRT interpreter) that is expected to populate particular variables, one of which is called show text, which contains the text that will be rendered. Another is called `term`; it contains the default name for the concept being referenced. The TRRT finds all texts that satisfy the regex and will replace them in the end with a character sequence that we call a 'renderable ref' (see point c)
+The variables (named capturing groups) are then used to find the MRG that contains the term being referenced (there is a default MRG in case such variables are empty). From the selected or default MRG, a single entry needs to be found that corresponds with the termref. This is done by using the term variable (which often is empty) or, when it is empty, by using the showtext variable (which always exists) as a starting point. These texts are first processed into some canonical form, called a regularized text, so that they can be used to compare with entries in the formPhrases field of MRG entries. When a match is found, that MRG entry will be selected to create the renderable ref.
 
 A 'renderable ref' is created by executing a handlebars template, which can access all fields in the MRG entry, as well as all named capturing groups as populated by the regex. This means that it is fully up to those who run the tool to determine what the renderable ref looks like.
 The TEv2 MVP has an interpreter for Spec-Up term references, meaning it can find constructs of the form` [[ref: {showtext}]]` and `[[ref: {showtext}, {term}]]` as valid references.  It can also find constructs of the form `[[xref: {scopetag}, {showtext}]]`. All that is needed is a proper regex that finds occurrences of such syntax and populates the appropriate named capturing groups. The modification to also support syntaxes such as `[[xref: {scopetag}:{vsntag}, {showtext}]]` are trivial.
@@ -250,7 +250,7 @@ The TEv2 MVP has an interpreter for Spec-Up term references, meaning it can find
 
 Have a look at it [here](#spec-up-improvements) and be informed that Spec-Up is a longer running open source project that [originated in DIF](https://github.com/decentralized-identity/spec-up). ToIP will invest in improvements to it in 2024. And offers these improvements as PRs to the DIF repo.
 
-Here we focus on the informative aspects of the technical specification: what is it, why are we programming this and how to use it.
+Here, we focus on the informative aspects of the technical specification: what it is, why we are programming it, and how to use it.
 
 It is possible to include references to terms from external spec-up generated specifications. To include a source you would like to pull references from, include an external_specs array in your spec config. The value should be a key/value object where the key is used in the external reference below, and the value should be the URL of the external spec.
 
@@ -279,7 +279,7 @@ The feature "abbreviation" is under construction!
 
 ```
 [[def: term { | abbrev}, {alias}, {alias}, ... ]]
-~ Lorem Ipsum ...
+~ Lorem Ipsum 
 ```
 {optinal}
 
@@ -347,7 +347,7 @@ The tool will perform
 ### External Consistency
 We like the reuse of existing terminology laid out in definitions and glossaries. If applied correctly, reuse will increase consensus within TrustoverIP.
 
-Given this positive effect we encourage people to look what's there already before defining and writing your own definition.
+Given this positive effect, we encourage people to look at what's there already before defining and writing their own definition.
 
 How do we know which known glossary to use? Maybe any glossary we have previously created a cross-reference from should be included?
 There is already tooling available to include existing glossaries and give a unified overview of them in [KERISSE](https://weboftrust.github.io/WOT-terms/docs/glossary-unified?level=2). This listing can be adjusted to "ToIP only".
@@ -379,17 +379,7 @@ The front-end functionality of the resulting github.io page can and must be alte
 
 
 ## System feature layout
-The front-end layout and pdf layout of the resulting github.io page can and must be altered to comply with various style-guide rules of external parties like IETF or ISO.
-
+The front-end layout and pdf layout of the resulting GitHub.io page can and must be altered to comply with various style-guide rules of external parties like IETF or ISO.
 
 | TBW |
 
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (# Normative references)
-
-[//]: # (::: { #nrm:pdf2 .normref label="ISO 32000-2" })
-
-[//]: # (ISO 32000-2, *Document management --- Portable Document Format --- Part 2: PDF 2.0*)
-
-[//]: # (:::)

@@ -1,19 +1,23 @@
 ## Normative addendum - Spec-up improvements  {#spec-up-improvements}
 
-This normative section is also called the “Spec-Up glossary tool” (SGT).
+This normative section is also called the “Spec-Up-T”.
 
 #### Background
-To simplify the job of tech spec construction and editing, the Technology Stack WG has adopted the Spec-Up document rendering tool which is originally a DIF open source project ([repo](https://github.com/decentralized-identity/spec-up)). 
+To simplify the job of tech spec construction and editing, the CTWG has adopted the Spec-Up document rendering tool which is originally a DIF open source project ([repo](https://github.com/decentralized-identity/spec-up)). 
 
 #### Objective
+[Spec-Up-T](https://github.com/trustoverip/spec-up-t) enhances Spec-Up for Terminology and Glossary design and implementation. In 2025 we plan to reverse engineer Spec-Up-T enhancements into the original DIF Spec-Up. A joint effort to do so is in the making. | TBW : link |
 
-Based on use cases of certain roles we'd like to technically specify improvements in a normative way, so that they can be implemented right away and connected to issues.
+Based on use cases of certain roles we technically specify improvements in a normative way. This way we were able to implement them right away and manage the process in [github issues](https://github.com/trustoverip/spec-up-t/issues).
 
-In each topical section (header level 3) there'll be various sub-topics (header level 4)
+In each topical section (header level 3 in this chapter) there'll be various sub-topics (header level 4)
 - features
 - consistenty checks
 - domain checks
 - business rules
+  
+#### Documentation of Spec-Up-T
+Read or reference the [docusaurus website](https://trustoverip.github.io/spec-up-t-website).
 
 ### refs
 
@@ -21,9 +25,8 @@ One def and 1 to many refs may be present in a spec-up source document.
 
 #### features
 
-For an author there are mainly three relevant functionalities.
+For an terminology author there are mainly three relevant functionalities.
 1.  Spec-Up already has a basic glossary feature: `def` tags for defining glossary entries and `ref` tags for marking up terms in the spec that refer to def-tagged terms. Def tags only reference def tags *in the same* Spec-Up document.
-
 
 ### Internal definition (def)
 definitions (`def`s)
@@ -32,18 +35,19 @@ definitions (`def`s)
 [[def: term { | abbrev}, {alias}, {alias}, ... ]]
 ~ Lorem Ipsum ...
 ```
-{optinal}
+{optional}
 
-A `term` SHOULD be defined as a ToIP definition style : lower case
+A `term` SHOULD be defined as a ToIP definition style : lower case with dashes for spaces.
 
-An `alias` COULD be referenced. If you do so the reference MUST end up at the definition of `term` This is already operational in the current version of Spec-Up and implemented with nested spans
+An `alias` COULD be referenced. If you do so, the reference MUST end up at the definition of `term` This is already operational in the current version of Spec-Up and implemented with nested spans
 
 ::: ISSUE
 https://github.com/henkvancann/terminology-governance-guide/issues/1
 :::
 
-> Check `defs` of aliases https://github.com/decentralized-identity/spec-up/blob/master/single-file-test/spec.md#term-references
+> Check `defs` of aliases https://github.com/decentralized-identity/spec-up/blob/master/single-file-test/spec.md#term-references |TBW: replace T link |
 and the working `refs` here https://identity.foundation/spec-up/#term-references
+
 
 
 `abbrev` COULD be defined and referenced. If you do so a seperate definition of `abbrev` MUST be present in the document itself:
@@ -95,12 +99,13 @@ Three ways of offering references (`ref`s) to definitions (`def`s) by the author
 
 | TBW where is the registry to ensure uniqueness of doctags and prevention of duplicious doctags? |
 
+###### Abbrev not yet implement
+As of Nov 2024 Abbrev is not yet implemented. However, we leave the design in tact in this governance guide.
 
 ##### System feature Consistency
 
 Consistency and rules for [[def:]]s and [[ref:]]s leads to github.io page with all kinds of working internal and external links and clear rules for writers.
 
-   
 #### Consistency pre-caution
 
 Each `def` in a local Spec-Up document that has **exactly the same** `def`* existing in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`). 
@@ -108,20 +113,18 @@ Each `def` in a local Spec-Up document that has **exactly the same** `def`* exis
 Each `ref` has an existing `def`. Each `def` has at least one `ref` or `xref`. 
 
 Spec-Up code that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
-   a. any ref tag defined in the spec has a corresponding def tag for the glossary entry, and  
-   b. every def tag defining a glossary entry has at least one ref tag pointing to it.
-
+   a. any `ref` tag defined in the spec has a corresponding `def` tag for the glossary entry, and  
+   b. every `def` tag defining a glossary entry has at least one `ref` tag pointing to it.
 
 #### Domain checks
 - `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
 
 **Local references**
 
-The most important domain check between a local ref and def is that they're always pointing back and forth in the same Spec-Up document — they look like:
+The most important domain check between a local `ref` and `def` is that they're always pointing back and forth in the same Spec-Up document — they look like:
 `[[def: term, alias, ..., alias ]]`
 
 `[[ref: phrase]]` where phrase is one of `term` or optional `alias`es.
-
 
 **Basic domain checks**
 
@@ -135,37 +138,42 @@ The most important domain check between a local ref and def is that they're alwa
 **Domain checks Spe-Up or github actions**
 
 1. No abbrevs in the text of a term either in "()" or after ";"
-2. The system must warn for double aliases in one def
-3. The system must warn for double abbrevs in one def
-4. No duplicity in wording in term, abbrev and alias(ses)
-5. If term and abbrev are the same, discard abbrev
-6. If alias and term are the same, discard alias
-7. If abbrev and alias are the same, discard alias
+2. The system must warn for double `aliases` in one `def`
+3. The system must warn for double `abbrevs` in one `def`
+4. No duplicity in wording in `term`, `abbrev` and `alias`(ses)
+5. If `term` and `abbrev` are the same, discard `abbrev`
+6. If `alias` and `term` are the same, discard `alias`
+7. If `abbrev` and `alias` are the same, discard `alias`
 
-| TBW What is 'the same' ? |
+##### What is 'the same'
+When there is a collision, meaning an exact match of two terms using the terminology governance guidelines and Spec-Up-T rendering plus form-phrases (noy yet implemented) we consider them the same.
+
+> **Example**
+> "Root of trust" -> root-of-trust
+> "Root-of-Trust" -> root-of-trust
+> Conclusion "Root of trust" and "Root-of-Trust" are the same
 
 #### Business rules
 
 ::: note Usecase Author
-If the spec authors believe the term only applies in the scope of their particular spec, they can define it with a def tag in their own internal spec glossary and then ref it there.
+If the Terminology author believe a certain `term` only makes specific sense in the scope of their particular spec, they can define it with a `def` tag in their own internal spec glossary and then `ref` it there.
 :::
 
 **Parser checks Spe-Up or github actions**
 
-1. The system must warn for double aliases in more than one def
-2. The system must warn for double abbrevs in more than one def
-3. The system must report broken internal links, refs that don't match term, abbrev nor aliasses.
+1. The system must warn for double `aliases` in more than one `def`
+2. The system must warn for double `abbrevs` in more than one `def`
+3. The system must report broken internal links, `ref`s that don't match `term`, `abbrev` nor `alias`ses.
 
 ### xrefs
 
-We need the capability for all ToIP specs to use  `xref`s to reference a common ToIP Glossary in addition to their own internal glossary. The common glossary will be referenced with `title`.
+We have capability for all Spec-Up-T-based specs to use  `xref`s to reference a common ToIP Glossary in addition to their own internal glossary. The common glossary will be referenced with `title`.
 
-::: note Usecase Author
+::: note Usecase Author revisited
 TSWG spec authors would like to use any term already defined in the ToIP Glossary without having to repeat it in their glossary, and they can add any term specific to their spec.
 :::
 
-
-2. An `xref` tag to enhance Spec-Up code to support *remote* refs.
+- An `xref` tag to enhance Spec-Up code to support *remote* refs.
   
 #### Features
 
@@ -267,11 +275,10 @@ The following metadata MUST be registered:
 - `authenticated github user` that adopts the term (create), changes it's context (update) or deletes the context.
 
 This metadata SHOULD be added:
-
 - `title` of the group from which the term will be adopted
-- `role` of the `authenticated github user` in the current scope
 
 You COULD add or remove:
+- `role` of the `authenticated github user` in the current scope
 - `context` which is a block of free text.
 
 ##### How to adopt a term with added or updated context? {#adopt-context}
@@ -286,7 +293,7 @@ Reference:
 `[[ref: term]]` 
 
 **Example**
-Where `KE` is the title of KERI spec in spec-up format and `TP` the title of the ToIP overall glossary in spec-up.
+Where mnenomic `KE` is the title of KERI spec in spec-up format and mnenomic `TP` (title) of the ToIP overall glossary in spec-up.
 
 ```
 
@@ -300,7 +307,9 @@ Where `KE` is the title of KERI spec in spec-up format and `TP` the title of the
 
 #### Consistency pre-caution
 
-| TBW |
+- The mnenomics (e.g. `KE`) SHOULD be unique per Spec-Up-T installation (repo)
+- The github.io-pages website of every `title` SHOULD exist
+- The `term` externally referenced SHOULD exist on the external github.io-pages referenced by the mnenomic/`title`.
 
 #### Business rules
 
@@ -337,27 +346,23 @@ Mind you, this process touches group dynamics, consensus building and communicat
 
 ### System feature functionality
 
-The front-end functionality of the resulting github.io page can and must be altered to comply with various Reader allowances:
-- Only so and so often a link to known term in the glossary
-- Only so and so often an abbreviation of term added to the term in the core text
-- Pop-ups consistenly showing definitions while hovering over the term
-- Consensus tooling (kerific) as a browser extension
+The front-end functionality of the resulting github.io page can and should be altered to comply with various *Reader* allowances:
 
-| TBW |
+- Only so and so often a link to known term in the glossary (not yet implemented ultimo 2024)
+- Only so and so often an abbreviation of term added to the term in the core text (not yet implemented ultimo 2024)
+- Be able to one-click copy a permanent link to a term (click the `#`symbol)
+- Pop-ups consistently showing definitions while hovering over the term
+- Consensus tooling (Kerific) as a browser extension
+- Github commit history drill down option
+- Compare changes since references to external sources (`xref`), for they might have changed in the meanwhile
 
+ *Terminology author* allowances:
+ - Save snapshot/versions of the glossary that have permanent links of their own.
 
 ### System feature layout
 The front-end layout and pdf layout of the resulting github.io page can and must be altered to comply with various style-guide rules of external parties like IETF or ISO.
 
+Not yet designed.
 
-| TBW |
+| TBW 2025|
 
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (# Normative references)
-
-[//]: # (::: { #nrm:pdf2 .normref label="ISO 32000-2" })
-
-[//]: # (ISO 32000-2, *Document management --- Portable Document Format --- Part 2: PDF 2.0*)
-
-[//]: # (:::)

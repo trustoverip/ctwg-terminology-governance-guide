@@ -1,10 +1,10 @@
 ## Status of This Memo
 
-The document structure is based on a template specification for [ToIP](https://github.com/trustoverip/specification-template).
+The document structure is based on [Spec-Up-T](https://github.com/trustoverip/spec-up-t).
 
 The home Github repository from which this Guide is currently generated is https://github.com/trustoverip/ctwg-terminology-governance-guide.
 
-This document is a guide for spec authors and a discription of how the tooling works. The [normative section](#spec-up-improvements) is aimed at developers of the specification template mentioned above.
+This document is a guide for spec authors (content authors and terminology authors) and a description of how the tooling is designed a supposed to work. The [normative section](#spec-up-improvements) is aimed at developers of the specification template mentioned above.
 
 ## Copyright Notice
 
@@ -18,7 +18,6 @@ confusion within this specification between the OWF Contributor License
 and the designated source code license, the terms of the OWF Contributor License shall apply.
 
 These terms are inherited from the Concepts and Terminology Working Group at the Trust over IP Foundation. [Working Group Home](https://wiki.trustoverip.org/pages/viewpage.action?pageId=65700)
-
 
 ## Terms of Use
 
