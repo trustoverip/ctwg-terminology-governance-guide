@@ -1,10 +1,3 @@
-
-[//]: # (::: forewordtitle)
-
-[//]: # (Foreword)
-
-[//]: # (:::)
-
 ## Foreword
 
 This publicly available specification was approved by the ToIP Foundation Steering Committee on [dd month yyyy must match date in subtitle above]. The ToIP permalink for this document is:

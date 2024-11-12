@@ -1,4 +1,1 @@
-
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (\toc)
+| TBW a table of contents |

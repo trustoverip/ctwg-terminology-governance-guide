@@ -1,11 +1,5 @@
-
-
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (Main content {#sec:content})
-
 ## Executive Summary
-Governance and user manual of our concepts & terminology for groups/scopes within ToIP and ToIP as a whole.
+This guide is a governance manual of our concepts & terminology for groups/scopes within ToIP and ToIP.
 
 ### Conclusion
 
