@@ -1,0 +1,66 @@
+{
+  "specs": [
+    {
+      "title": "Spec-Up-T Starterpack",
+      "spec_directory": "./spec",
+      "spec_terms_directory": "terms-definitions",
+      "output_path": "./docs",
+      "markdown_paths": [
+        "05_title.md",
+        "10_header.md",
+        "13_toc.md",
+        "16_foreword.md",
+        "18_clauses.md",
+        "20_introduction.md",
+        "24_scope.md",
+        "terms-and-definitions-intro.md",
+        "terms-definitions/abbrev.md",
+        "terms-definitions/alias.md",
+        "terms-definitions/doctag.md",
+        "terms-definitions/guide.md",
+        "terms-definitions/normative.md",
+        "terms-definitions/phrase.md",
+        "terms-definitions/term.md",
+        "28_design.md",
+        "32_howto_define.md",
+        "36_roles.md",
+        "40_tools_landscape.md",
+        "44_style_guide.md",
+        "48_source_management.md",
+        "52_manual_defsrefs.md",
+        "64_audience.md",
+        "68_spec-up-improvements.md",
+        "72_integration.md",
+        "90_annex.md"
+      ],
+      "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
+      "logo_link": "https://github.com/blockchainbird/spec-up-t",
+      "source": {
+        "host": "github",
+        "account": "blockchainbird",
+        "repo": "spec-up-t-starter-pack"
+      },
+      "external_specs": [
+        {
+          "test-1": "https://blockchainbird.github.io/spec-up-xref-test-1/"
+        },
+        {
+          "test-2": "https://blockchainbird.github.io/spec-up-xref-test-2/"
+        }
+      ],
+      "external_specs_repos": [
+        {
+          "external_spec": "test-1",
+          "url": "https://github.com/blockchainbird/spec-up-xref-test-1",
+          "terms_dir": "spec/term-definitions"
+        },
+        {
+          "external_spec": "test-2",
+          "url": "https://github.com/blockchainbird/spec-up-xref-test-2",
+          "terms_dir": "spec/term-definitions"
+        }
+      ],
+      "katex": false
+    }
+  ]
+}
