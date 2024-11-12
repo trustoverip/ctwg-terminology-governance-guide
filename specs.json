@@ -35,7 +35,7 @@
             },
             "external_specs": [
                 {
-                    "test-1": "https://blockchainbird.github.io/spec-up-xref-test-1/"
+                    "toip": "https://blockchainbird.github.io/spec-up-xref-test-1/"
                 },
                 {
                     "test-2": "https://blockchainbird.github.io/spec-up-xref-test-2/"
@@ -43,8 +43,8 @@
             ],
             "external_specs_repos": [
                 {
-                    "external_spec": "test-1",
-                    "url": "https://github.com/blockchainbird/spec-up-xref-test-1",
+                    "external_spec": "toip",
+                    "url": "https://github.com/trustoverip/ctwg-main-glossary/",
                     "terms_dir": "spec/term-definitions"
                 },
                 {

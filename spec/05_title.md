@@ -29,6 +29,6 @@ Terminology Governance Guide
 It's mainly a summary of activities and decisions of CTWG in 2024; editor: Henk van Cann
 
 *Template improvements:*
-~ [GitHub repo](https://github.com/trustoverip/spec-up-t)
+- [GitHub repo](https://github.com/trustoverip/spec-up-t)
 
-~ [Commit history](https://github.com/trustoverip/spec-up-t/commits/main)
+- [Commit history](https://github.com/trustoverip/spec-up-t/commits/main)

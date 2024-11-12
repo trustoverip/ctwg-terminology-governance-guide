@@ -16,4 +16,4 @@
 
 ~ *Mind you: the most applicable abbreviation should be in [[ref:abbrev]].*
 
-~ Criterium: an alias | TBW |
+~ Criterion: an alias | TBW |
