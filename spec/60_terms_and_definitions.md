@@ -1,12 +1,12 @@
 ## Terms and definitions
+
 [[def: Guide, guide, guidelines]]
-~  ~ 
+
 ~ What is the criterium something being a Guide versus a Specification?
-~ A Specification has enough [[ref: normative]] statements to be directly implementatable. 
+A Specification has enough [[ref: normative]] statements to be directly implementatable. 
 
 [[def: normative]]
 
-~  ~ 
 ~ A theory is “normative” if it, in some sense, tells you what you should do - what action you should take.Also see [KERISSE](https://weboftrust.github.io/WOT-terms/docs/glossary-unified?level=2#normative)
 
 [[def: phrase]]
