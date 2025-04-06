@@ -1,16 +1,10 @@
-## Status of This Memo
-
-The document structure is based on [Spec-Up-T](https://github.com/trustoverip/spec-up-t).
-
-The home Github repository from which this Guide is currently generated is https://github.com/trustoverip/ctwg-terminology-governance-guide.
+## Status
 
 This document is a guide for spec authors (content authors and terminology authors) and a description of how the tooling is designed a supposed to work. The [normative section](#spec-up-improvements) is aimed at developers of the specification template mentioned above.
 
 ## Copyright Notice
 
-This specification is subject to the **OWF Contributor License Agreement 1.0 - Copyright**
-available at
-[https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owf-contributor-license-agreement-1-0-copyright](https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owf-contributor-license-agreement-1-0-copyright).
+This specification is subject to the **OWF Contributor License Agreement 1.0 - Copyright** available at [https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owf-contributor-license-agreement-1-0-copyright](https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owf-contributor-license-agreement-1-0-copyright).
 
 If source code is included in the specification, that code is subject to the
 Apache 2.0 license unless otherwise marked. In the case of any conflict or

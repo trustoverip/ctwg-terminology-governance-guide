@@ -6,7 +6,7 @@ We have audiences that need to be addressed in their own language along three ax
 3. Jargon: language specific to the field of expertise
 
 ### Design principle
-We stick to one language in the most specific (or most elaborate definition of a term) for the source.
+We stick to one language in the most specific (or most elaborate definition of a term) for the source: American English
 
 Jargon needs a separate term definition to specify the term that covers a known concept for an inner circle but is unknown to the outside world.
 

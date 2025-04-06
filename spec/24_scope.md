@@ -1,10 +1,3 @@
-
-[//]: # (Pandoc Formatting Macros)
-
-[//]: # (\mainmatter)
-
-[//]: # (\doctitle)
-
 ## Scope
 
 This guide uses open-source technology as much as possible and sticks to best-of-breed tools:
@@ -21,11 +14,19 @@ In 2024 we phased out:
 
 In 2024 we postponed:
 - Connect to TEv2 step by step
+- The tooling around {TBW relations between terms}
 
 ### Roadmap
 
-How do TEv2, Spec-Up, and KERISSE relate? The goal is unification, and we prevent reinventing tools already in place. 
+How do TEv2, Spec-Up, and KERIDoc relate? The goal is unification, and we prevent reinventing tools already in place. 
 
 The issue of unification is currently open, but this guide might solve it with further designs. A sequence-numbered roadmap to unification (presuming that that's the goal) can be found below.
 
-We plan to unify KERISSE with Spec-Up-T and its governance. This step means the github wiki-based source management of term definitions will be dropped. Like the CTWG Main Glossary, there will be a KERI glossary that xrefs to the Main ToIP glossary for all general and SSI terminology.
+We have made a clearer distinction between what KERIDoc does and what Spec-Up-T does: KERIDoc is education on top op Spec-Up-T-based glossaries: 
+1. the ToIP General Glossary
+2. the ToIP Main Glossary
+3. KERISuite Main glossary 
+
+### Process
+
+In the process we have dropped github wiki-based source management of term definitions. It's now done in Spec-Up-T

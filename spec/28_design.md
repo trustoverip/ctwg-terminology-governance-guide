@@ -2,26 +2,17 @@
 
 This chapter addresses the hard work needed when designing terminologies.
 
-In the process of designing term definitions and trying to achieve consensus over them, an often-heard remark is:
- > "Please let me just write my document and add some glossary items and we’re done. 
- 
- > Let's skip all the academic hassle about *meaning, concepts, artifacts* and what have we. Let’s get some work done!”
-
-### Do not proceed if you want to skip the nerdy stuff
-
-The reason why we can't skip terminology design is devastatingly fundamental: 
-
- If communication and understanding each other were easy, we could leave the hard part out. 
-
-But **we must remember the terminology design** if we want to convey a (new) concept and make sense to others.
+Think of designing and writing a consistent and accepted set of term definitions and the process of achieving consensus over them. Let alone the confusion you get when having the exact same terms but different concepts behind them.
 
 ::: warning Alert
-Since we've just told you, you can only *knowingly* neglect the duty of designing proper terminology.
-:::
+You can't skip terminology design. It is fundamental to success.
+::: 
 
-**Do not proceed with this chapter if you're a sender; only send or broadcast.**
+ **If communication and understanding each other were easy, we could leave the hard part out.**
 
-You need to understand first to be understood.
+So **we must remember terminology design** if we want to convey a (new) concept and make sense to others. You need to understand first to be understood.
+
+Let's take the bull by the horns.
 
 ### One-word solution (trailer)
 
@@ -126,7 +117,6 @@ The term definition looks like this:
  ```
 
 **End of example.**
-
 
 In this process and iteration, you could look for over-arching or adjacent term definitions (with criteria!) that match your concept. If this is the case, you could adopt a term definition, with or without an extra note. 
 That’s when consensus building comes in as a spin-off of your terminology design.

@@ -1,7 +1,7 @@
 ## Integration
 This is an informative section
 
-Spec-Up, Spec-Up Glossary tool, TEv2, and the KERISSE-engine plus kerific tooling are gradually going to be integrated for the sake of concept & terminology management in ToIP.
+Spec-Up, Spec-Up Glossary tool, TEv2, and the KERISSE-engine (search engine, KERIDoc education) plus kerific tooling are gradually going to be integrated for the sake of concept & terminology management in ToIP.
 
 This section might be why we anticipate this Governance Guide on future development the way we've done in the previous sections.
 
@@ -76,7 +76,7 @@ As a TEv2 creator and frontman, we share Rieks Joosten's viewpoint on this propo
 He explained that the same features being discussed here were also added to TEv2. 
 
 There is always tension between adding a lot of features and taking a long time or keeping things very minimal. He pointed out that creating glossaries based on cherry-picking glossary entries based on personal preferences can be problematic because it doesn't actually establish shared understanding and criteria for defining terms.  
-The larger the group involved and the more varied their cultural backgrounds, the more problematic that can become. However, that doesn't mean we shouldn't start with tools that are actually working right now. Riek's personal preference is to use terminology that expresses the author's intentions clearly. For example, reading the Spec-Up documentation was challenging for Rieks because it was difficult to understand it without more context.
+The larger the group involved and the more varied their cultural backgrounds, the more problematic that can become. However, that doesn't mean we shouldn't start with tools that are actually working right now. Rieks' personal preference is to use terminology that expresses the author's intentions clearly. For example, reading the Spec-Up documentation was challenging for Rieks, because it was difficult to understand it without more context.
 
 Rieks would like to have several more sessions on TEv2 so we can still look at how we can use it for our terminology. He's not opposed to enhancing Spec-Up for these features but, at the same time, keeping TEv2 tooling in progress. 
 
@@ -131,5 +131,3 @@ A[A:Root];B[B:/spec];C[/C:saf.yaml/]; D[D:glossaries]; E[E:terms]
 #### Always archive, never delete
 
 Darrell O'Donnell clarified that technical maintainers will not delete any ToIP repos but will only archive them.
-
-| TBW |

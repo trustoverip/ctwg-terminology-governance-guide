@@ -1,7 +1,7 @@
 
 ## Tools Landscape
 
-People like to understand the components and structure of ToIP's concepts, machinery for terminology, and governance.
+Here we present the components and structure of ToIP's concepts, machinery for terminology, and governance.
 
 ### git and github
 
@@ -14,7 +14,7 @@ Every role that changes stuff (Create, Update, or Delete) must be on github, and
 
 This way:
 - sources are GitHub managed, and so is the provenance of each definition
-- we can track provenance carefully. Tracking is a step towards fully managed, individually versioned glossary management tooling, such as those developed with TEv2 and KERISSE.
+- we can track provenance carefully. Tracking is a step towards fully managed, individually versioned glossary management tooling, such as those developed with Spec-Up-T and KERIDoc, searchable by KERISSE(.org).
 
 ### Github landscape
 
@@ -28,8 +28,6 @@ github.com repo| main or 'own choice' |Spec-Up
 github.io pages |gh-pages| `user.github.io/repo` 
 ^^ |  | github actions |
 ^^ |  | kerific |
-github.com wiki| master |`github.com/user/repo/wiki`
-^^ | | github actions |
 [Infrastructure Terminology Engine ToIP]
 
 ### Flow of Writing a Specification in Spec-Up
@@ -67,12 +65,8 @@ ToIP might need both, particularly to onramp organizations that are leveraging T
 What are the components of the following glossary/term/concept toolsets?
 
 - Github (repo, pages and wiki)
-- Spec-Up
-- KERISSE platform toolset
+- Spec-Up-T
+- KERIDoc platform toolset
 - TEv2 toolset
 
 What features exist in both, and what is unique in each toolset? If there is overlap, how are they different (e.g., how does an author craft a link from a word in a source document to a term in a specified glossary), and how could they be combined?
-
-What is the future of the KERISSE suite and TEv2?
-
-| TBW |

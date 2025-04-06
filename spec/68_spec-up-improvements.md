@@ -6,7 +6,7 @@ This normative section is also called the “Spec-Up-T”.
 To simplify the job of tech spec construction and editing, the CTWG has adopted the Spec-Up document rendering tool which is originally a DIF open source project ([repo](https://github.com/decentralized-identity/spec-up)). 
 
 #### Objective
-[Spec-Up-T](https://github.com/trustoverip/spec-up-t) enhances Spec-Up for Terminology and Glossary design and implementation. In 2025 we plan to reverse engineer Spec-Up-T enhancements into the original DIF Spec-Up. A joint effort to do so is in the making. | TBW : link |
+[Spec-Up-T](https://github.com/trustoverip/spec-up-t) enhances Spec-Up for Terminology and Glossary design and implementation. In 2025 we plan to reverse engineer Spec-Up-T enhancements into the original DIF Spec-Up. A joint effort to do so is in the making. See the [issue list](https://github.com/decentralized-identity/spec-up/issues) at DIF user on github.com.
 
 Based on use cases of certain roles we technically specify improvements in a normative way. This way we were able to implement them right away and manage the process in [github issues](https://github.com/trustoverip/spec-up-t/issues).
 
@@ -32,7 +32,7 @@ For an terminology author there are mainly three relevant functionalities.
 definitions (`def`s)
 
 ```
-[[def: term { | abbrev}, {alias}, {alias}, ... ]]
+[[def: term { , acronym}, {alias}, {alias}, ... ]]
 ~ Lorem Ipsum ...
 ```
 {optional}
@@ -50,11 +50,11 @@ and the working `refs` here https://identity.foundation/spec-up/#term-references
 
 
 
-`abbrev` COULD be defined and referenced. If you do so a seperate definition of `abbrev` MUST be present in the document itself:
+`acronym` COULD be defined and referenced. If you do so a seperate definition of `acronym` MUST be present in the document itself:
 
 ```
-[[def: abbrev]]
-~ [the term the abbrev refers to]
+[[def: acronym]]
+~ [the term the acronym refers to]
 
 Example of the duplet:
 
@@ -68,24 +68,24 @@ Example of the duplet:
 
 #### Don't do this
 ```
-[[def: term (abbrev)]] and  
+[[def: term (acronym)]] and  
 [[ref: phrase]]
 ```
 but do this
 ```
-[[def: term | abbrev]]
+[[def: term | acronym]]
 ```
-How to add an abbreviation after the term? Two ways possible:
+How to add an acronymiation after the term? Two ways possible:
 1. in the markdown, but NOT in the reference to the term:
   [[ref:]]
-There will be post-markdown processing available to proportionally add abbreviation
+There will be post-markdown processing available to proportionally add an acronym
 
 ### Internal linking (ref)
 
 ```
 [[ref: phrase]]
 ```
-`phrase` MUST be one of `term`, `abbrev` or `alias`
+`phrase` MUST be one of `term`, `acronym` or `alias`
 
 
 Three ways of offering references (`ref`s) to definitions (`def`s) by the author of a text:
@@ -99,8 +99,8 @@ Three ways of offering references (`ref`s) to definitions (`def`s) by the author
 
 | TBW where is the registry to ensure uniqueness of doctags and prevention of duplicious doctags? |
 
-###### Abbrev not yet implement
-As of Nov 2024 Abbrev is not yet implemented. However, we leave the design in tact in this governance guide.
+###### acronym not yet implement
+As of Nov 2024 acronym is not yet implemented. However, we leave the design in tact in this governance guide.
 
 ##### System feature Consistency
 
@@ -117,7 +117,7 @@ Spec-Up code that detects dangling `refs` and `defs`. In other words, code that 
    b. every `def` tag defining a glossary entry has at least one `ref` tag pointing to it.
 
 #### Domain checks
-- `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
+- `term`, or (optional) `alias` or (optional) `acronym` of the term definition used to reference
 
 **Local references**
 
@@ -137,13 +137,13 @@ The most important domain check between a local `ref` and `def` is that they're 
    
 **Domain checks Spe-Up or github actions**
 
-1. No abbrevs in the text of a term either in "()" or after ";"
+1. No acronyms in the text of a term either in "()" or after ";"
 2. The system must warn for double `aliases` in one `def`
-3. The system must warn for double `abbrevs` in one `def`
-4. No duplicity in wording in `term`, `abbrev` and `alias`(ses)
-5. If `term` and `abbrev` are the same, discard `abbrev`
+3. The system must warn for double `acronyms` in one `def`
+4. No duplicity in wording in `term`, `acronym` and `alias`(ses)
+5. If `term` and `acronym` are the same, discard `acronym`
 6. If `alias` and `term` are the same, discard `alias`
-7. If `abbrev` and `alias` are the same, discard `alias`
+7. If `acronym` and `alias` are the same, discard `alias`
 
 ##### What is 'the same'
 When there is a collision, meaning an exact match of two terms using the terminology governance guidelines and Spec-Up-T rendering plus form-phrases (noy yet implemented) we consider them the same.
@@ -162,8 +162,8 @@ If the Terminology author believe a certain `term` only makes specific sense in 
 **Parser checks Spe-Up or github actions**
 
 1. The system must warn for double `aliases` in more than one `def`
-2. The system must warn for double `abbrevs` in more than one `def`
-3. The system must report broken internal links, `ref`s that don't match `term`, `abbrev` nor `alias`ses.
+2. The system must warn for double `acronyms` in more than one `def`
+3. The system must report broken internal links, `ref`s that don't match `term`, `acronym` nor `alias`ses.
 
 ### xrefs
 
@@ -207,7 +207,7 @@ Or *remote* reference
 
 `[[xref: title, term]]` 
 
-Where `term` is either a term, abbreviation or alias.
+Where `term` is either a term, acronyms or alias.
 
 #### Consistency pre-caution
 
@@ -269,7 +269,7 @@ Adopting a term from a related scope (under the ToIP umbrella) or external SHOUL
 
 #### Features context and metadata
 The following metadata MUST be registered:
-- `term`, or (optional) `alias` or (optional) `abbreviation` of the term definition used to reference
+- `term`, or (optional) `alias` or (optional) `acronym` of the term definition used to reference
 - `url` of the spec in which the term definition list is present and the name of the header
 - `commit hash` of the term definition plus specification adopted
 - `authenticated github user` that adopts the term (create), changes it's context (update) or deletes the context.
@@ -284,7 +284,7 @@ You COULD add or remove:
 ##### How to adopt a term with added or updated context? {#adopt-context}
 
 Add:
-`[[def: term or abbreviation or alias]]` with in the text part of the definition
+`[[def: term or acronym or alias]]` with in the text part of the definition
 
 `[[xref: title, term]]` 
 
@@ -349,7 +349,7 @@ Mind you, this process touches group dynamics, consensus building and communicat
 The front-end functionality of the resulting github.io page can and should be altered to comply with various *Reader* allowances:
 
 - Only so and so often a link to known term in the glossary (not yet implemented ultimo 2024)
-- Only so and so often an abbreviation of term added to the term in the core text (not yet implemented ultimo 2024)
+- Only so and so often an acronym of a term added to the term in the core text (not yet implemented ultimo 2024)
 - Be able to one-click copy a permanent link to a term (click the `#`symbol)
 - Pop-ups consistently showing definitions while hovering over the term
 - Consensus tooling (Kerific) as a browser extension

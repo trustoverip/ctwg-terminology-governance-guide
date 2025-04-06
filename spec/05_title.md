@@ -1,7 +1,7 @@
 Terminology Governance Guide
 ==================
 
-**Specification Status**: v0.8 Draft
+**Specification Status**: v1.0 final
 
 **Latest Draft:**
 
@@ -26,9 +26,11 @@ Terminology Governance Guide
 **Participate:**
 
 *In the Guide:*
-It's mainly a summary of activities and decisions of CTWG in 2024; editor: Henk van Cann
+It's mainly a summary of activities and decisions of CTWG in 2024 and 2025; editor: Henk van Cann
 
 *Template improvements:*
 - [GitHub repo](https://github.com/trustoverip/spec-up-t)
-
 - [Commit history](https://github.com/trustoverip/spec-up-t/commits/main)
+
+*Latest Spec-Up-T developments*
+Check out [GitHub repo Blockchainbird](https://github.com/blockchainbird/spec-up-t)

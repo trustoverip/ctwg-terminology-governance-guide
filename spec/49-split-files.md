@@ -1,6 +1,10 @@
 # How to split `terms_and_definitions.md` file into multiple files
 
+Find the most recent info about the working and user manual here: [Splitter-tool](https://trustoverip.github.io/spec-up-t-website/docs/advanced-features/splitter)
+
 ## General info
+
+At the time of writing the Governance Guide (2024)
 
 Note:
 
@@ -15,11 +19,17 @@ Note:
 Split `terms_and_definitions.md` into multiple files, one file per term:
 
 ```
-npm run split
+npx spec-up-splitter [pathToTermsFile] [pathToTermsDir]
 ```
 
 Create the glossary file (named `index.html`):
 
 ```
 npm run render
+```
+or option 1 of the menu
+
+```
+npm run menu
+1
 ```

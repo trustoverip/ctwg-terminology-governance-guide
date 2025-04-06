@@ -1,5 +1,5 @@
 ## Executive Summary
-This guide is a governance manual of our concepts & terminology for groups/scopes within ToIP and ToIP.
+This guide is a governance manual of our concepts & terminology for groups/scopes within TrustoverIP (ToIP) but also applicable outside of ToIP.
 
 ### Conclusion
 
