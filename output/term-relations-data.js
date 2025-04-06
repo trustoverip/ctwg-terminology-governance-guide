@@ -33,7 +33,10 @@ const allTermRelations = {
     },
     {
       "term": "normative",
-      "synonyms": []
+      "synonyms": [],
+      "xrefs": [
+        "toip, normative"
+      ]
     },
     {
       "term": "phrase",

@@ -17,7 +17,7 @@ Apache 2.0 license unless otherwise marked. In the case of any conflict or
 confusion within this specification between the OWF Contributor License 
 and the designated source code license, the terms of the OWF Contributor License shall apply.
 
-These terms are inherited from the Concepts and Terminology Working Group at the Trust over IP Foundation. [Working Group Home](https://wiki.trustoverip.org/pages/viewpage.action?pageId=65700)
+These terms are inherited from the Concepts and Terminology Working Group at the Trust over IP Foundation. [Working Group Home](https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/22978063/Concepts+Terminology+Working+Group)
 
 ## Terms of Use
 
