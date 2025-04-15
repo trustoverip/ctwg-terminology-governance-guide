@@ -114,7 +114,7 @@ We focus only on **terms and definitions**. We use the term *target repo* for th
 - **Production Repo Master (Master)**: Oversees the merging of PRs and has the authority to delete term definitions.
 - **Curator**: Engages in reviewing proposed changes to enhance quality and accuracy.
 
-### Editing Options
+### 4. Editing Options
 
 #### 1. GitHub Edit (via GitHub UI)
 
@@ -151,7 +151,7 @@ We focus only on **terms and definitions**. We use the term *target repo* for th
   4. Commit the changes using the Source Control panel in VS Code, pushing them to your fork.
   5. Initiate a pull request via GitHub's website from your fork to the original repository.
 
-### Master and Curator Actions
+### 5. Master and Curator Actions
 
 #### Update (U) by Master
 - **Process**: Review, potentially edit, and merge pull requests. Manage and resolve any merge conflicts.
@@ -168,3 +168,20 @@ We focus only on **terms and definitions**. We use the term *target repo* for th
 
 - Merge conflicts may arise during the PR process, requiring coordination for resolution.
 - All changes, including deletions, should be documented with clear commit messages and PR descriptions to maintain a transparent history of modifications.
+
+### 6. Being a host for x- and t- referenced glossaries
+
+The governance rules for Glossaries that apply to be a referenced glossary (like ToIP main Glossary, KERI, General Glossary) is best summarized in this one sentence:
+
+**Your Index.html is leading on github.com.**
+
+Any guest using `tref` or the `xref` tag to an external glossary will generate an API call, and get the index.html files over from their externally referenced glossaries and distill the right xref or tref information from those.
+
+It's the responsibility of every host to:
+
+- keep all `.md` files on github.com in sync with their live `Index.html` file of Spec-Up-T
+- have successful runs of their *Github Action Scripts* that generate the `Index.html` file
+- differentiate between the `main` branch (production) and other branches on github.com
+- have `index.html` be at least as young as any of the .md files that contain term definitions on github.com on the `main` branch.
+  
+The reason for these source management rules is consistency: How can a guest be sure to have the latest term definition if the host would not have the latest version live in its own production glossary?  
