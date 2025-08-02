@@ -79,7 +79,6 @@ dist
 nbproject/
 # VSCode
 .vscode/
-docs/index.html
 .DS_Store
 out.md
 out.pdf

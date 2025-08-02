@@ -1,0 +1,13 @@
+const allXTrefs = {
+  "xtrefs": [
+    {
+      "externalSpec": "toip",
+      "term": "normative",
+      "repoUrl": null,
+      "terms_dir": null,
+      "owner": null,
+      "repo": null,
+      "site": null
+    }
+  ]
+};
