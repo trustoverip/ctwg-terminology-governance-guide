@@ -39,11 +39,23 @@
             },
             "external_specs": [
                 {
-                    "external_spec": "test-1",
-                    "gh_page": "https://blockchainbird.github.io/spec-up-xref-test-1/",
-                    "url": "https://github.com/blockchainbird/spec-up-xref-test-1",
-                    "terms_dir": "spec/term-definitions"
-                }
+                    "external_spec": "toip1",
+                    "gh_page": "https://henkvancann.github.io/ctwg-main-glossary/",
+                    "url": "https://github.com/henkvancann/ctwg-main-glossary",
+                    "terms_dir": "spec/terms-definitions"
+                },
+                {
+                    "external_spec": "vlei1",
+                    "gh_page": "https://henkvancann.github.io/vlei-glossary/",
+                    "url": "https://github.com/henkvancann/vlei-glossary",
+                    "terms_dir": "spec/terms-definitions"
+                },
+                {
+                    "external_spec": "toip2",
+                    "gh_page": "https://henkvancann.github.io/ctwg-general-glossary/",
+                    "url": "https://github.com/henkvancann/ctwg-general-glossary",
+                    "terms_dir": "spec/terms-definitions"
+                }            
             ],
             "katex": false
         }
