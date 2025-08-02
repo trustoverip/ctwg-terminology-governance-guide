@@ -9,6 +9,7 @@
       "output_path": "./docs",
       "markdown_paths": [
         "05_title.md",
+        "07_revision_history.md",
         "10_header.md",
         "13_toc.md",
         "16_foreword.md",
