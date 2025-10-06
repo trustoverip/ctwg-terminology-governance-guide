@@ -44,6 +44,6 @@
   "homepage": "https://github.com/trustoverip/spec-up-t#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "spec-up-t": "1.2.9"
+    "spec-up-t": "^1.4.0"
   }
 }
