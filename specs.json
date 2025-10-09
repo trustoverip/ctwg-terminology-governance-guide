@@ -28,8 +28,7 @@
         "68_spec-up-improvements.md",
         "72_integration.md",
         "90_annex.md",
-        "49-split-files.md",
-        "_60_terms_and_definitions.md"
+        "49-split-files.md"
       ],
       "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
       "logo_link": "https://github.com/blockchainbird/spec-up-t",
