@@ -1,7 +1,7 @@
 Terminology Governance Guide
 ==================
 
-**Specification Status**: v1.0 final
+**Specification Status**: v0.8 draft
 
 **Latest Draft:**
 
