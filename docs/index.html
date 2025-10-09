@@ -424,8 +424,19 @@ customElements.define("slide-panels",class extends HTMLElement{static get observ
 </ul>
 </li>
 <li><a href="#technical-consistency" >Technical consistency</a></li>
+<li><a href="#style-guide-for-markdown-text-headers-and-anchors" >Style guide for Markdown text, headers and anchors</a>
+<ul>
+<li><a href="#conflating-transformation" >Conflating transformation</a>
+<ul>
+<li><a href="#original-spec-up-feature" >Original Spec-Up feature</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#style-guide-for-toip-terminology" >Style guide for ToIP terminology</a>
 <ul>
+<li><a href="#key-format" >key-format</a></li>
+<li><a href="#proper-nouns" >Proper nouns</a></li>
 <li><a href="#forms" >Forms</a>
 <ul>
 <li><a href="#example" >Example</a></li>
@@ -1245,13 +1256,39 @@ flowchart TD
 <li>split the text over markdown files in the spec-up <code>./spec</code> folder</li>
 <li>beware Spec-Up-T has as mandatory directory structure, where the Terms Definition reside in a subdirectory of <code>./spec</code></li>
 </ul>
+<h2 id="style-guide-for-markdown-text-headers-and-anchors"><a class="toc-anchor d-print-none" href="#style-guide-for-markdown-text-headers-and-anchors">§</a> Style guide for Markdown text, headers and anchors</h2>
+<h3 id="conflating-transformation"><a class="toc-anchor d-print-none" href="#conflating-transformation">§</a> Conflating transformation</h3>
+<p>Markdown creates HTML ID attributes from a header. If two identical id’s are create, anchors will not work correctly at all times.</p>
+<p>Example:</p>
+<pre class="language-text"><code class="language-text">term 1: “My Awesome Term” and term 2: “My awesome term”
+For example:
+
+Original: My Awesome Term
+Transformed id: my-awesome-term
+</code></pre>
+<p>You cannot definitively reverse my-awesome-term back to “My Awesome Term” because the capitalization and exact spacing are lost.</p>
+<p>It should be noted that an HTML document (resulting from Markdown generation) should not contain two identical ID attributes; however, it does not stop browsers from rendering the page.</p>
+<h4 id="original-spec-up-feature"><a class="toc-anchor d-print-none" href="#original-spec-up-feature">§</a> Original Spec-Up feature</h4>
+<p>This “feature” has been available since the introduction of Spec-Up. It’s the responsibility of the text writer to solve conflating anchors.</p>
+<p>For terms and definitions, we should introduce a governance rule.</p>
 <h2 id="style-guide-for-toip-terminology"><a class="toc-anchor d-print-none" href="#style-guide-for-toip-terminology">§</a> Style guide for ToIP terminology</h2>
-<p>A term that is intended to be generic SHOULD be <strong>lowercase</strong> in the glossary and in the specs and other documents that use that term. A term SHOULD only be uppercase if it is a <span id="term:proper-noun"><span class="term-local-original-term term-original-term" title="original term">proper noun</span></span>. The only exception is an acronym. For example, the following terms are all generic nouns:</p>
+<p>The governance rule we need for terminology:</p>
+<p><strong>a combination of repo and key-formatted term is unique.</strong> Terms should convert to:</p>
+<p><url>/#term:<term-in-key-format></term-in-key-format></url></p>
+<p>for example</p>
+<p><a path-0="glossary.trustoverip.org" path-1="#term:administering-body" href="https://glossary.trustoverip.org/#term:administering-body"><span>https://glossary.trustoverip.org/#term:administering-body</span></a></p>
+<h3 id="key-format"><a class="toc-anchor d-print-none" href="#key-format">§</a> key-format</h3>
+<p>In an ecosystem of spec-up-t-based glossaries, there <em>could be</em> another <code>administering-body</code> defined somewhere else, for example, <code>https://github.com/weboftrust/ctwg-main-glossary/#term:administering-body</code> and this exact same keys are addressable independently via a <code>tref</code> and <code>xref</code>.</p>
+<p>A term that is intended to be generic SHOULD be <strong>lowercase</strong> in the glossary and in the specs and other documents that use that term.</p>
+<p>The key-format is lowercase and dashes: <code>lowercase-example</code></p>
+<h3 id="proper-nouns"><a class="toc-anchor d-print-none" href="#proper-nouns">§</a> Proper nouns</h3>
+<p>To address proper nouns we SHOULD use an alias.</p>
+<p>A key can be uppercase if it is a def: . The only exception is an acronym. For example, the following terms are all generic nouns:</p>
 <ul>
 <li>wallet</li>
 <li>agent</li>
-<li>public key (and public-key)</li>
-<li>key event log (and key-event-log)</li>
+<li>public key (leading to key-format <code>public-key</code>)</li>
+<li>key event log (leading to key-format <code>key-event-log</code>)</li>
 </ul>
 <h3 id="forms"><a class="toc-anchor d-print-none" href="#forms">§</a> Forms</h3>
 <p>Terminology can be defined in various forms: nouns, verbs, adjectives/adverbs, and relations(hips).</p>
@@ -1260,7 +1297,8 @@ flowchart TD
 Verb: Verify
 Adjective: verified (signature)
 Relationships: verifying</p>
-<p>Authors are free to choose any form of a term. It’s a way to express their objectives and concepts and give meaning. Even multiple forms are welcome, which means that in your scope, you COULD define the noun, the verb, and a relationship. E.g., verifier, verify and verifying.</p>
+<p>Authors are free to choose any form of a term. However, we highly recommend the use of our key-format (lowercase and dashes for the keys)</p>
+<p>It’s a way to express their objectives and concepts and give meaning. But use aliases for this. Even multiple forms are welcome, which means that in your scope, you COULD define the noun, the verb, and a relationship. E.g., verifier, verify and verifying.</p>
 <h3 id="acronym-standardization"><a class="toc-anchor d-print-none" href="#acronym-standardization">§</a> Acronym standardization</h3>
 <p>The following terms are proper nouns or acronyms:</p>
 <ul>
@@ -1271,6 +1309,32 @@ Relationships: verifying</p>
 <li>Diffie-Hellman</li>
 <li>KEL</li>
 </ul>
+<p>Good governance Use them as an alias, preferably.</p>
+<pre><code>[[def: KEL]]
+
+~ See [Key event log](key-event-log)
+</code></pre>
+<p>is allowed, but we prefer</p>
+<pre><code>[[def: key-event-log, Key event log, KEL]]
+
+~ explanation, single point of definition
+</code></pre>
+<p>Both definitions will lead to your explanation using</p>
+<p><a class="term-reference" href="#term:kel">KEL</a> and via a click to <code>kel-event-log</code></p>
+<p>but you’ll have to maintain the local reference in markdown, whereas Spec-Up-T will have more abilities to health check refs, trefs and xrefs.</p>
+<p>Furthermore,</p>
+<p><span id="term:kel"><span id="term:key-event-log"><span id="term:key-event-log">Key event log <span class="term-local-parenthetical-terms">(KEL, <span class="term-local-original-term term-original-term" title="original term">key-event-log</span>)</span></span></span></span></p>
+<p>gives you all these options</p>
+<pre><code>[[ref: key-event-log]]
+[[ref: Key event log]]
+[[ref: KEL]]
+[[xref: repo, key-event-log]]
+[[xref: repo, key-event-log, Key event log]], Showing `Key event log` as the external link text
+[[xref: repo, KEL]], Showing `KEL` as the external link text
+[[tref: repo, key-event-log]]
+[[tref: repo, key-event-log, alias1, &lt;any list of aliases&gt;]]
+... being able to reference the tref transclusion with any alias and the key showing `alias1` in local refs.
+</code></pre>
 <h4 id="special-characters"><a class="toc-anchor d-print-none" href="#special-characters">§</a> Special characters</h4>
 <p>Notice that the Acronym <code>X.509</code> has a special character (<code>.</code>). You SHOULD use special characters only if it’s crucial for the meaning of the term.</p>
 <p>So, for example, <em>not this</em>: <code>security@hub4issuer</code> but stick to the guidelines above and define, for example, <code>security-at-hub-for-issuer</code>.</p>
