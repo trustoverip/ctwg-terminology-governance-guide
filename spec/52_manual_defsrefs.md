@@ -355,7 +355,7 @@ Three ways of offering references (`ref`s) to definitions (`def`s) by the author
 1. MUST be done in the source by hand
 2. MUST be done by code; we'll add a data attribute to the resulting HTML that indicates the origin of the link.
 
-| TBW, where is the registry to ensure the uniqueness of doctags and the prevention of duplicitous doctags? |
+| TBW, where is the registry to ensure the uniqueness of doctags and the prevention of duplicitous [[ref: doctag]]s? |
 
 
 ## System feature Consistency

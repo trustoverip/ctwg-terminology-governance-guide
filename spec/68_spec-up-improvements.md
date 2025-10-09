@@ -223,7 +223,7 @@ see [refs](#refs) for applicable initial domain constraints; plus the following.
 
 **Remote references**
 
-`[[xref: title, term]]` is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So any Spec-Up document that uses remote refs would need to include a doctag section that looks something like this:
+`[[xref: title, term]]` is a short unique tag assigned to the remote Spec-Up document containing the def for the term being referenced. So any Spec-Up document that uses remote refs would need to include a [[ref: doctag]] section that looks something like this:
 
 In specs.json:
 ```
