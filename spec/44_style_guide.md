@@ -1,14 +1,12 @@
 ## Writing
 
+This section is informative.
+
 In case of a *specification*, it is important to ask yourself, "Is what I write implementable?" Follow it step by step. Check all the MUSTs and SHOULDs in the normative section.
 
 ### Readability
-- numbering of paragraphs
+- numbering of paragraphs: automatic
 - Informative stuff per the section below the normative
-
-### Review and cooperation
-Keep stuff in place where it was/is during the review period. When the review period is over, you could
- - relocate sections and paragraphs in the most logical - of best flowing manner
 
 ## Technical consistency
  - split the text over markdown files in the spec-up `./spec` folder
@@ -52,6 +50,8 @@ for example
 https://glossary.trustoverip.org/#term:administering-body
 
 ### key-format
+
+Any \[\[def:]] MUST HAVE a key, and it SHOULD BE [[ref: key-formatted]].
 
 In an ecosystem of spec-up-t-based glossaries, there _could be_ another `administering-body` defined somewhere else, for example, `https://github.com/weboftrust/ctwg-main-glossary/#term:administering-body` and this exact same keys are addressable independently via a `tref` and `xref`.
 
@@ -157,15 +157,15 @@ Add 1. A well-known acronym needs its own entry in the glossary:
 ```Spec-Up-T
 [[def: SCID, SCIDs]]
 
-~ [[ref: self-certifying identifier]]
+~ [[ref: self-certifying-identifier]]
 ```
 If you would only do this:
 
 ```Spec-Up-T
-[[def: self-certifying identifier, self-certifying identifiers, SCID, SCIDs]]
+[[def: self-certifying-identifier, Self-certifying identifiers, SCID, SCIDs]]
 ```
 
-then it's harder to find the entry SCID in the glossary. Referencing SCID In the specification links directly to self-certifying identifier.
+then it's a bit harder to find the entry SCID in the glossary. Referencing SCID In the specification links directly to Self-certifying identifier.
 
 Add 2. Less-known acronyms could be defined, but it could burden the glossary with unnecessary entries.
 
@@ -184,7 +184,7 @@ The use of:
 
 ~ Also known as: `[[ref: {acronym or term} ]]`
 
-is in both situations optional.
+is in both situations OPTIONAL.
 
 
 ##### Comply with

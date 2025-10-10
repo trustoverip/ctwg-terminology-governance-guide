@@ -1,4 +1,8 @@
-# How to split `terms_and_definitions.md` file into multiple files
+## How to split terms
+
+Suppose you have an old-school `terms_and_definitions.md` file. 
+
+For Spec-Up-T you MUST have them available in multiple "atomic" files.
 
 Find the most recent info about the working and user manual here: [Splitter-tool](https://trustoverip.github.io/spec-up-t-website/docs/advanced-features/splitter)
 

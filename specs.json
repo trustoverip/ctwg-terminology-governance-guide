@@ -17,7 +17,6 @@
         "20_introduction.md",
         "24_scope.md",
         "terms-and-definitions-intro.md",
-        "28_design.md",
         "32_howto_define.md",
         "36_roles.md",
         "40_tools_landscape.md",
@@ -27,8 +26,11 @@
         "64_audience.md",
         "68_spec-up-improvements.md",
         "72_integration.md",
+        "80_bibliography.md",
         "90_annex.md",
-        "49-split-files.md"
+        "28_design.md",
+        "49-split-files.md",
+        "92_history_of_development.md"
       ],
       "logo": "https://raw.githubusercontent.com/blockchainbird/spec-up-t-starter-pack/main/spec-up-t-starterpack/logo.svg",
       "logo_link": "https://github.com/blockchainbird/spec-up-t",

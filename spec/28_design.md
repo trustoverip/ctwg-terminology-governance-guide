@@ -2,17 +2,18 @@
 
 This chapter addresses the hard work needed when designing terminologies.
 
-Think of designing and writing a consistent and accepted set of term definitions and the process of achieving consensus over them. Let alone the confusion you get when having the exact same terms but different concepts behind them.
+The process result in a consistent and accepted set of term definitions. The next step consists of achieving consensus over them, internally and externally. 
+
+> Just think of the confusion you get when having the exact same terms but different concepts behind them.
+
+ **If communication and understanding each other were easy, we could leave the hard part out.**
 
 ::: warning Alert
 You can't skip terminology design. It is fundamental to success.
 ::: 
 
- **If communication and understanding each other were easy, we could leave the hard part out.**
 
 So **we must remember terminology design** if we want to convey a (new) concept and make sense to others. You need to understand first to be understood.
-
-Let's take the bull by the horns.
 
 ### One-word solution (trailer)
 
@@ -40,15 +41,13 @@ Oops, the magic word is in there! Have you been able to locate it? No? Keep goin
 
 ### Reality check
 
-Most term definitions in the world do not comply with the distinguishing-criteria rule, and that’s the uniqueness of this guide: it’s easy to follow and the result is an immensely improved terminology.
+Most term definitions in the world do not comply with the distinguishing-criteria rule, and that’s the uniqueness of this guide: follow the steps and the result will be an improved terminology.
 
-This guide won't be as comprehensive as the [TNO Terminology Design](https://tno-terminology-design.github.io/design-methods/). However, we offer the best of both worlds, resulting in simplicity and speed and about eighty percent the right way how it should be done.
-
-Before we share the *all-encompassing solution* in just one word, we’ll lay out the step-by-step process to get your terminology done.
+Before we share the *all-encompassing solution* in just one word, we’ll lay out the step-by-step process to get your terminology in order.
 
 ### Iterate through concepts
 
-The idea is that anyone willing to explain some concepts by (first) understanding the perception of the receiving party will go through this loop for every term that is unclear, conflates, or is otherwise not fully understood.
+The idea is that anyone willing to explain some concepts by (first) understanding the perception of the receiving party, will go through this loop for every term that is unclear, any term that conflates, or is otherwise not fully understood.
 
 ::: note At least one criterium?
 At least one clear, generally applicable criterion should come from this step-by-step per term.
@@ -66,6 +65,7 @@ E[E:Term definition incl. criteria]; F[/F:Text with terms/];
  E --> |4: Replace criteria by term | F
  E --> |Add term def to ...| C
 ```
+
 Tada! Our matching guidelines are:
 1. Start writing your objectives and ideas, and identify the concepts behind the terms you use ([why](#why-objectives)-[what is it](#what-identifying)?) 
 2. Write the concept in a specific way: formulate criteria ([why](#why-criteria)-[how](#how-criteria)-[what is good](#what-good-criteria)?) when you expect confusion to arise
@@ -78,7 +78,9 @@ Although we inevitably introduce some unexplained terms with an example, here’
 
 #### Step 1
 
-In the digital identity field, you might want to write a vision document on how Self-Sovereign Identity could work in Health Care. One of the concepts/mechanisms within healthcare is to be sure who(the knee) will be operated on next. You write how that’s going to work out with terms covering this reassurance: *validation* and *verification*. The concept concluded successfully, which we call *authentication*.
+In the digital identity field, you might want to write a vision document on how Self-Sovereign Identity could work in Health Care. 
+
+One of the concepts/mechanisms within healthcare is to be sure who's knee for example, will be operated on next. You write how that’s going to work out with terms covering this reassurance: *validation* and *verification*. The concept concluded successfully, which we call *authentication*.
 
 #### Step 2
 
@@ -118,20 +120,21 @@ The term definition looks like this:
 
 **End of example.**
 
-In this process and iteration, you could look for over-arching or adjacent term definitions (with criteria!) that match your concept. If this is the case, you could adopt a term definition, with or without an extra note. 
+In this process and iteration, you could look for over-arching or adjacent term definitions (with criteria!) that match your concept. If this is the case, you could *adopt* a term definition, with or without an extra note. 
 That’s when consensus building comes in as a spin-off of your terminology design.
 
 ### The magic word
 
 What could the magic word be? No worries! Ladies and gentlemen (drum roll), the magic word in designing all your terms, defining them in a reproducible way so that anyone could identify your concepts, understand your ideas better, and apply the word by themself (drums hold!):
-Criteria!
+
+**Criteria!**
 
 A least one well-formulated criterium is what we need per term definition, or should we say we need *minimally one* in order to distinguish whether something is 
 - included or excluded from the definition
 - inside or outside of the concept behind the term
 Criteria! It's just pure magic.
 
-::: warning Wait, wait. Come back. Please?
+::: warning Please hold on! 
 Ah, happily, you’re still here. We need to share a question at this stage. Remember, we’re trying to offer a simple and speedy guideline to create great terminology for your project. 
 :::
 
@@ -144,9 +147,9 @@ Because
 - it needs the understanding of others
 - it needs the dear wish to want to understand other people first before you push to be understood.
 
-### The why and how of all steps
+### The why and how of terminology-design steps
 
-In the next paragraph, we'll revisit the guidelines with reasons and further instructions.
+In the next paragraph, we'll revisit the guidelines with underlying motivation and further instructions.
 
 ### 1. Start writing your objectives and ideas, and identify the concepts behind the terms you use 
 
@@ -172,6 +175,7 @@ B{B:Terms understood?}; D{D:Text with criteria understood?};
 
 #### why criteria? {#why-criteria}
 Another person should be able to apply wording to a particular concept and decide whether something falls in or out of the criteria. Example: if someone defines a stool with the criterium "all furniture to comfortably sit on with exactly three legs from seat to each non-fixed contact point of the leg on the floor," then anyone could (dis)qualify various instances of something to sit on that looks like a stool to many.
+
 Although you might not fully agree that a 4-legged stool is no stool according to this definition with this criterium, the fact is that it's the generally applicable criterium that we were looking for.
 
 ##### Stools IN the criterium
@@ -237,12 +241,14 @@ Be sure to create a Terminology definition with the criteria and identify this c
 
 For example:
 ```
-[[def: stool, stools]]
+[[def: stool, Stool, stools]]
  ~ furniture to comfortably sit on with exactly three legs from the seat to each non-fixed contact point of the leg on the floor
 ```
 AND then change the concept criteria in the text with the concept term:
 
 move the ```[[ref: stools]]``` into the van.
+
+> Mind you: a \[\[def:]] takes the form of `[[def: key, alias1, alias2, ...]]`, a main topic of this Terminology Governance Guide.
 
 #### Next time 
 You might come across a concept that has already been identified and defined with a term + criteria:

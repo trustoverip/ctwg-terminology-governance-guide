@@ -4,3 +4,8 @@ This guide is a governance manual of our concepts & terminology for groups/scope
 ### Conclusion
 
 Governing terminology is akin to herding cats — seemingly impossible. We tried our best.
+
+The result is combination of:
+- Content in Markdown
+- Open-source Software on the command-line
+- A GitHub web user interface (Open-source)

@@ -1,9 +1,12 @@
 ## How to write definitions in your terminology
 
+Annex A. [Terminology Design](#terminology-design-aids) is a great way to learn the foundation of good Terminologies.
+
+In brief:
 1. Repeat the objectives or goals (of a specific group/community)
 2. Discuss and communicate towards consensus about a particular concept or term
 3. Define the scope or mental model together
-4. Write criteria for which is inside or outside the reach of a specific term
+4. Write *criteria* for which is inside or outside the reach of a specific term
 
 This process is essential for mutual understanding.
 
@@ -16,9 +19,13 @@ This process is essential for mutual understanding.
 2. Criteria should be deterministic, either to be in or out of the definition
 
 Example: **Acronym**
-> [[def: self-certifying-identifier, SCID]]
+> [[def: self-certifying-identifier, Self-certifying identifier, SCID]]
 > ~ a shorthand in capitals for a [[ref: {acronym}]]. It may contain special characters. It may not contain spaces.
 > Criterium for not being an Acronym: If the word is not in uppercase, in our context, the word is more likely to be an [[ref: {alias}]] for the term.
+
+:::note Info
+Spec-Up-T uses the first alias (alias1, OPTIONAL) as the spelling to show in the resulting glossary/text.
+:::
 
 3. Formulate edge cases: What is just included in a definition and excluded from a definition?!
 
@@ -33,7 +40,7 @@ An editor can achieve enhancement in the written version of concepts and termino
 - archiving old concepts and glossaries
 - tool development
 - consensus building
-Beware: **don't reference poorly-formulated definitions**, because that'll put a burden on the future.
+Good habit: **don't reference poorly-formulated definitions**, because that'll put a burden on the future.
 
 ### Towards automatic processing in github actions
 

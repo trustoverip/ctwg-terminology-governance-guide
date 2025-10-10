@@ -1,6 +1,6 @@
 ## Status
 
-This document is a guide for spec authors (content authors and terminology authors) and a description of how the tooling is designed a supposed to work. The [normative section](#spec-up-improvements) is aimed at developers of the specification template mentioned above.
+This document is a guide for spec authors (content authors and terminology authors) and a description of how the tooling is designed and supposed to work. The [normative section](#spec-up-improvements) is aimed at developers of Spec-Up-T.
 
 ## Copyright Notice
 
