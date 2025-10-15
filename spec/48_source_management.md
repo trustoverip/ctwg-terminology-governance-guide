@@ -1,54 +1,67 @@
 
-
 ## Source Management Use Cases
 
-Input knowledge level: You know how to create, read, and update term definitions in relation to your concept or mental model. 
+:::note Note
+Input knowledge level: You know how to create, read, and update term definitions fit for your concept or mental model.
+:::
 
-### What is this about?
-This section is about the technical processing/source management of terms and definitions: the latest single source of truth about them in a certain scope. Spec-Up-T is the tool we discuss. The elementary part in Spec-Up-T is the `{term}.md` file that contains (spec-up extended) markdown. We offer various ways of managing these source files while maintaining their overall integrity.
+### What is source management about?
+This section is about the technical processing/source management of terms and definitions: the latest single source of truth about them in a certain scope. Spec-Up-T is the tool we discuss. The elementary part in Spec-Up-T is the `{term}.md` file that contains markdown and Spec-Up-T-specific tags. We offer various ways of managing these source files while maintaining their overall integrity.
 
 ### What can I do with it?
 Source management culminates in the *latest version* of any glossary in which the term is accessible (linkable) with a *permanent URL*, and we have a *history available* that referred to this term at what time in the past.
 
 :::info
-You can reference this glossary in your own write-ups and add to the general consensus about terms at the same time.
+You can reference to any Spec-Up-T-based glossary in your own write-ups and add to the general consensus about terms at the same time.
 :::
 
 ### Why source management?
 We want to offer multiple ways to edit term definitions. So it is not markdown **or** github frontend but markdown **and** github frontend.
-The end result is always a git(hub) tracked directory with separate `.md` files of a spec-up-based specification. The use cases are described below. The term definitions themselves use the spec-up markdown extensions syntax: `def`, `ref`, `tref` and `xref`.
+The end result is always a git(hub) tracked directory with separate `.md` files of a Spec-up-T-based specification. The use cases are described below. The term definitions themselves use the Spec-Up-T markdown extensions syntax: `def`, `ref`, `tref` and `xref`.
 
 Examples given:
 
 ``` markdown
-[[def: access control]]: 
+[[def: access-control-list, access-control-list, ACL]]: 
 ~ The process of granting or denying specific [[ref: request]]s for obtaining 
-and using information and related information [[xref: processing]] services.
+and using information and related information [[xref: toip2, processing]] services.
 ```
 
+
 ``` markdown
-[[tref: toip1, access control]] 
+[[tref: toip1, access-control, Access control]] 
 ```
 
 ### Why not simply use a Content Management System like WordPress??!
 
 Just to name a few reasons:
 1. User management and version control in the github ecosystem instead of centralized technological island creation
-2. Spec-up static website generation; we don't want the introduction of databases
+2. Spec-Up-T static website generation; we don't want the introduction of databases
 3. Continuous Development Continuous Integration (CDCI) versus staging by hand
 4. Business rules and Permanent linking made possible via Github Actions
 5. Consensus-building within scopes but also between scopes
+6. Mapping of locally defined terms, aliases and spelling.
 
 ### For who is source management of terminology relevant?
 The roles involved in the use cases are `editor`, `production repo` master and `curator`.
+
 One person could have more than one role.
 
-**All roles have a github user account**, because we need to know 
+**All roles above have a github user account**, because we need to know 
 - *who* proposes a change on *what* and *when* this occurred.
 - who changes what and when. 
-Git keeps track of us.
+Git keeps track of the changes we provoke.
 
-He/she who has `write` user rights on the target repo (TrustoverIP main glossary) can directly edit and commit the latest version. Other roles will have to adapt to those results. For example *merge conflicts* might arise and then need to be solved.
+:::info Info
+Only the `Reader` role doesn't need a GitHub account.
+:::
+
+He/she who has `write` user rights on the target repo (e.g. TrustoverIP main glossary) can directly edit and commit the latest version. Other roles will have to adapt to those results.
+
+ For example *merge conflicts* might arise and then need to be solved.
+
+The good news is that Spec-Up-T has a mechanism for fallback to local versions of a definition if the original owner decides to update or delete it.
+We'll get into more detail about fall-back options.
 
 Further guidelines:
 - Editors COULD have a fork for the repo. They NEED TO have a forked target repo for options 2, 3, and 4 below.
@@ -94,7 +107,7 @@ This way, editors can edit the target repo (after having cloned it to their own 
 
 **The input** is a per-term-splitted directory of term md files
 **The process**: four options to make changes 
-**The end result** two options to get the results accepted in the target repo and final spec-up html output: Via 1. and via 2,3: all PR-based.
+**The end result** two options to get the results accepted in the target repo and final Spec-Up-T html output: Via 1. and via 2,3: all PR-based.
 
 All methods have full git tracing of who did what and when.
 
@@ -104,7 +117,7 @@ After this source editing have been saved our solution also overwrites the wiki 
 
 ### How it works in use cases
 
-The rest of this chapter outlines the use cases for managing term definitions in a spec-up-based specification, focusing on the roles of editors, production repo masters, and curators.
+The rest of this chapter outlines the use cases for managing term definitions in a Spec-Up-T-based specification, focusing on the roles of editors, production repo masters, and curators.
 
 We focus only on **terms and definitions**. We use the term *target repo* for the production repo, controlled by the role `master`.
 

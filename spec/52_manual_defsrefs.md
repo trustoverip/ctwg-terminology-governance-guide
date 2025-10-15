@@ -37,17 +37,17 @@ Would you like to list an external term definition in your own glossary?
 Would you like to link to an external term definition anywhere in your own glossary (and have a popup definition with a mouse-over)?
 
 1. Declare an external glossary in your configuration file with an <xgloss> mnenomic to reference it
-2. Use [[xref:<xgloss>, <term>]] to link to it real time anywhere in your glossary or specification.
+2. Use [[xref:<xgloss>, <term>, {<alias>} ]] to link to it real time anywhere in your glossary or specification. The optional `alias` will be show as the link text.
 
 #### Governance of own repo
-The governance of def & refs in the own repo has to be strict: It has to be kept sound by humans. So check your refs to see if you changed the def.  
+The governance of def & refs in the own repo has to be strict: The content of definition has to be kept sound by humans. So check your `ref`s to see if you changed the `def`.  
 [Source](https://wiki.trustoverip.org/display/HOME/2024-07-01+CTWG+Meeting+Notes)
 
-#### ToIP glossary
+#### ToIP glossaries
 
  In the ToIP Technology Architecture Specification, it's a long-desired feature to add an integrated glossary; It's named https://glossary.trustoverip.org.
  
- Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) has begun publishing the ToIP Glossary as its own standalone Spec-Up specification, where every entry is properly formatted, and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
+ Our objective is to offer a framework to offer this in a sustainably consistent way. The Concept & Terminology work group (CTWG) has begun publishing the ToIP Glossary as its own standalone Spec-Up-T specification, where every entry is properly formatted, and people are able to include terms from the ToIP Glossary (without having to copy those 400+ terms over into its own glossary).
 
 We have in fact three general-purpose glossaries available at ToIP/WebofTrust from April 2025:
 - [General IT glossary](trustoverip.github.io/ctwg-general-glossary)
@@ -72,6 +72,10 @@ To find the list, look for `external_specs:`
 
 ##### Why "try ref before def" {#try-ref-before-def}
 
+::: note Info
+with ref we mean the broader concept of `tref`, `xref`, `iref` and `ref`
+:::
+
 These are the advantages of *trying ref before def*:
 - consensus building: if you study defs of related scopes under the same umbrella, you'll become more knowledgeable and aware of the different fields
 - less work: it's easier to adopt a definition with well-formed criteria than having to [design one](#terminology-design-aids) yourself
@@ -79,21 +83,22 @@ These are the advantages of *trying ref before def*:
   
 Keep reading for an **important caveat** to these advantages! (No, [bring me there](#caveat-copy-def) now)  
 
-**Decide whether you'd like to adopt as is, adopt with a comment, or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
+**Decide whether you'd like to adopt a definition as is, adopt with a comment, or define yourself.** See [flow diagram](#flow-of-writing-a-specification-in-spec-up)
 
 #### Functionality
 For an author, there are three main relevant functionalities.
 1. Spec-Up already has a basic glossary feature: `def` tags for defining glossary entries and `ref` tags for marking up terms in the spec that refer to def-tagged terms. Def tags only reference def tags *in the same* Spec-Up document.
 2. An `xref` supports *remote* refs
 3. A `tref` to print a external definition in your own glossary
-4. We have functionality that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
+4. An `iref` to include a front-end generated inline copy of a definition.
+5. We have functionality that detects dangling `refs` and `defs`. In other words, code that checks to see that: 
  a. any ref tag defined in the spec has a corresponding def tag for the glossary entry, and  
  b. every def tag defining a glossary entry has at least one ref tag pointing to it.
 
 Supported consistency pre-cautions and reporting:
 
 ::: note Status
-March 2025 - The feature "checks" is being constructed step-by-step but not yet fully operational.
+October 2025 - The feature "health checks" is operational and available as a separate repository 
 :::
 
 Each `def` in a local Spec-Up document has **exactly the same** `def`* existing in any of the remotely referenced document URLs listed in the local document (see the `title` list description in your `specs.json`). This is also a recommended visual check performed by authors. ([Why?]({#try-ref-before-def}))
@@ -110,25 +115,97 @@ It's important to make explicit that somebody in a certain [role](./role.md#user
 
 #### Title (formerly "Doctag")
 
-##### External linking (tref and xref)
+#### External linking (tref and xref)
+
+::: note Info
+the `key` refers to a term specified in key-format spelling; lowercase with dashes instead of spaces. Example: `self-sovereign-identity`.
+:::
 
 We need the capability for all ToIP specs to use remote refs to reference a common ToIP Glossary in addition to their own internal glossary. So far, an incentivization under TSWG spec authors would be fine with that capability: they can use any term already defined in the ToIP Glossary without having to repeat it in their glossary, and they can add any term specific to their spec.
 
 ```
-[[tref: group, phrase]] and [[xref: group, phrase]]
+[[tref: group, key, {alias1}, {aliases 2 to n}]] and [[xref: group, key, {alias1} ]]
 ```
 
-`phrase` MUST be one of `term` in any of `group`'s glossary.
+`key` MUST be one of `term` in any of `group`'s glossary. If there is an `alias1` it'll be used as the definition text (tref) and link text (xref).
 
-For example, a specification that includes an `xref` tag that looks like this: [[xref: toip, {term}]] would reference a def tag defined in the ToIP Glossary. Similarly, a ref that looks like [[xref: hxwg, {term}]] would reference a defined term in the (theoretical) HXWG glossary.
+For example, a specification that includes an `xref` tag that looks like this: [[xref: toip, key, ]] would reference a def tag defined in the ToIP Glossary. Similarly, a ref that looks like [[xref: hxwg, {term}]] would reference a defined term in the (theoretical) HXWG glossary.
 
 With this remote reference feature, all ToIP specifications (and any other deliverable written with Spec-Up) would be able to include linked glossary terms (including hover pop-up definitions), both from within its own glossary and from any referenced glossary in another document that also uses Spec-Up.
 
 Mind you, this process touches on group dynamics, consensus building, and communication.
 
-##### Dangers of bluntly referencing and copying  {#caveat-copy-def}
+#### Dangers of bluntly referencing and copying  {#caveat-copy-def}
 
 It's important to note that team members in various [roles](#Roles) should feel free to define a term as they wish, **after studying what's available**. This is an important caveat for referencing terms.
+
+#### chains of refs and context switching
+
+##### What is "chains of refs"
+
+Specifications have their own mental model. Referencing definitions and text sections in other specs or glossaries means consensus building (via `tref`) and syncing ideas (via `tref` and `xref`).
+
+In Spec-Up-T we've been able to group specs and glossaries under a certain umbrella in an "ecosystem" of interrelated GitHub pages end-products and repos.
+
+A chain of ref mean: a tref to a tref to a tref, etc. Is also means the possibility a of a circular ref.
+**We do not want chain of refs**, rejected on content grounds too, which we call `context switching`
+
+Context switching means that you refer to exactly the same term or alias of a term in another context, without confirming that you're talking about the same concept.
+
+##### Example
+
+`witness` in KERI means something other than what is usually understood in the broader SSI field.
+
+The design decision of Spec-Up-T therefore, is:
+only one-deep trefs
+only one-deep xrefs
+a local ref to a tref(-alias) is fine
+
+Not allowed:
+- an xref to a tref
+- an xref to an alias
+- a tref to a tref
+- a tref to an alias
+
+This way Spec-Up-T prevents circular refs and unobserved context-switching (or mental-model switching).
+
+##### Substitutions to not switch contexts
+
+Spec-Up-T offers front-end functionality to substitute each `ref` in a `tref`ed text snippet for the **local match** of that `key` as long as the `ref`ed term has the syntax of a `key`.
+
+Spec-Up-T also offers front-end functionality to make each full URL in a `tref`ed text snippet operational. It can only check the validity of the link with tooling as specified in the [parent issue](https://github.com/trustoverip/spec-up-t/issues/160)
+
+`Trefs` can also be presented as plain text without links. So the toggle offers plain text or text with links; these links consist of full URLs and locally-matched `refs` in the proper `key` format.
+
+#####  It should consist of **errors** for:
+
+Dangling tref: there's no match in the external document on the `key` to a `def`
+
+Dangling xref: there's no match in the external document on the `key` to a `def`
+
+##### It should consist of **warnings** for:
+
+Dangling refs: there's no hit in the document to a `def`(-alias), `tref`(-alias)
+
+Dangling def: 
+1. There's no `ref` in the local document, 
+ 2. There's no `xref` or `tref` in the ecosystem of interlinked specs
+
+Dangling tref: there's no `ref` in the local document to the `key` or `alias` of the `tref`
+
+Plain external links: broken, full URLs to outside 
+
+Local anchors: broken, for cross-references and bibliography's normative and informative links
+
+##### Mind you: we cannot accept chains of refs nor context switching:
+
+xrefs: we do not match an *alias* defined in an external document's `def`, only the properly formatted `key`
+
+xrefs: we do not match anything from a `tref` defined in an external document
+
+trefs: we do not match an *alias* defined in an external document's `def`
+
+trefs: we do not match anything from a `tref` defined in an external document
 
 #### Add context and metadata
 
