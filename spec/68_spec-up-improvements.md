@@ -266,6 +266,10 @@ If the spec authors want to use a new term that does not exist in the ToIP Gloss
 Of course, this set of rules only works within an coherent community willing to follow them. We can’t control the use of terminology outside of the ToIP community.
 :::
 
+[[iref:phrase]]
+
+[[iref:term]]
+
 It should **check** each `ref` and `xref` created in reference `title` against *any `def`* that you're about to **remove** from a local file. 
 
 It should **signal** each `ref` and `xref` created in reference `title` against *any `def`* that you're about to **change** in a local file. 
