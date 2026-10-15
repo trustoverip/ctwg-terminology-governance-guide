@@ -21,9 +21,9 @@ We always generate a link to the original, most elaborate source in the base lan
 flowchart LR
 
     A[Terms Definitions] -->|meta data| L(Sheet)
-    A -->|language| C[EN-lvl1]
+    A -->|language| C[EN-lvl3]
     A -->|language| D[EN-lvl2]
-    A -->|language| E[EN-lvl3]
+    A -->|language| E[EN-lvl1]
     C --> F(watcher.md)
     C --> G(KERI.md)
     C --> H(autonomous-identifier.md)
