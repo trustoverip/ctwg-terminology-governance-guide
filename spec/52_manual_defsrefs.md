@@ -272,7 +272,7 @@ March 2025 - The feature "context metadata" is in the design phase, so it is not
 
 Check the flow diagram of writing terminology (references) in a specification [here](#flow-of-writing-a-specification-in-spec-up).
 
-##### How do we adopt the term "as is"? {#adopt-asis}
+##### How do we adopt the term "as is"?
 
 *Local* preferable
 `[[ref: term]]` 
