@@ -283,7 +283,7 @@ Or *remote* reference
 
 Where `term` is either a term, acronym, or alias.
 
-##### How do you adopt a term with added or updated context? {#adopt-context}
+##### How do you adopt a term with added or updated context?
 
 ::: note Status
 March 2025 - The feature "adopt a term with context and metadata" is in the design phase, so it is not operational
